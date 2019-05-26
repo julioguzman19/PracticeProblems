@@ -10,8 +10,8 @@ function stringLength(input){
 
 
 /*Alphabet Position in String*/
-document.getElementById("javaScript").innerHTML = alphabetPosition("a b c");
-
+/* document.getElementById("javaScript").innerHTML = alphabetPosition("a b c");
+ */
 function alphabetPosition(input){
     let abc ="abcdefghijklmnopqrstuvwxyz";
     let inputLength = 0;
@@ -47,3 +47,32 @@ function alphabetPosition(input){
     return string;
 
 }
+
+/* Vowels Count in string */
+document.getElementById("javaScript").innerHTML = getCount("roberto");
+
+function getCount(str) {
+    let vowelsCount = 0;
+ 
+    let vowels = "aeiou"
+    let strLen = 0;
+    
+    /* getting length of inputted string */
+    while(str[strLen] != undefined){
+      strLen++;
+    }
+    
+    /* comparing each character of inputted string vs vowels */
+    for(let i =0; i <strLen; i++){
+      
+      for(let j=0; j < 5; j++){
+        
+        if(str[i] === vowels[j]){
+        vowelsCount++;
+        }
+          
+      }
+    }
+    
+    return vowelsCount;
+  }
