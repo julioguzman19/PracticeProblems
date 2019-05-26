@@ -9,7 +9,7 @@ function stringLength(input){
     }
 
 
-/*Alphabet Position in String*/
+/*FAIL - Alphabet Position in String*/
 /* document.getElementById("javaScript").innerHTML = alphabetPosition("a b c");
  */
 function alphabetPosition(input){
