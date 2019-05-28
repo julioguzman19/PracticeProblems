@@ -49,7 +49,7 @@ function alphabetPosition(input){
 }
 
 /* Vowels Count in string */
-document.getElementById("javaScript").innerHTML = getCount("roberto");
+/* document.getElementById("javaScript").innerHTML = getCount("roberto"); */
 
 function getCount(str) {
     let vowelsCount = 0;
@@ -75,4 +75,19 @@ function getCount(str) {
     }
     
     return vowelsCount;
+  }
+
+  /* Binary Conversion from integer to Binary */
+  //document.getElementById("javaScript").innerHTML = Binary(2,2);//
+
+  function Binary(num1,num2){
+      let sum = num1 + num2;
+      let arrBinary = ""; //declaring empty string//
+      
+     while(sum>0){
+         let remainder = sum % 2 //gives remainder of sum divided by 2//
+         sum = Math.floor(sum/2); //math.floor rounds down to make sure remainder is 0 or 1 for positive numbers//
+         arrBinary = arrBinary + remainder;  //adding 0s and 1s to string//
+     }
+     return arrBinary; //outputs number in binary//
   }
