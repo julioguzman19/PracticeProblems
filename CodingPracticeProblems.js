@@ -91,3 +91,32 @@ function getCount(str) {
      }
      return arrBinary; //outputs number in binary//
   }
+
+
+  document.getElementById("javaScript").innerHTML = duplicateEncode("bye");
+  function duplicateEncode(word){
+ 
+    let length =0;
+    let emptyStr = "";
+    
+    while(word[length]!=undefined){
+    length++;
+}
+
+for (let i =0; i<length; i++){
+  
+  for(let j = 0; j<length;j++){
+    if(word[i] === word[j]){
+      emptyStr = emptyStr + ")";
+    }
+  }
+
+  for(let k = 0; k<length;k++){
+    if(word[i] === word[j]){
+      emptyStr = emptyStr + ")";
+    }
+  }
+
+}  
+return emptyStr;
+}
