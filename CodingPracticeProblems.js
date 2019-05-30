@@ -77,6 +77,8 @@ function getCount(str) {
     return vowelsCount;
   }
 
+
+
   /* Binary Conversion from integer to Binary */
   //document.getElementById("javaScript").innerHTML = Binary(2,2);//
 
@@ -93,38 +95,38 @@ function getCount(str) {
   }
 
 
-  document.getElementById("javaScript").innerHTML = duplicateEncode("bye");
+/*Encoding characters depending if dupe in word or not*/
+/*Ex: bye = '(((' byee = '(())'  ebye = ')(()'*/
+  document.getElementById("javaScript").innerHTML = duplicateEncode("byeea");
   function duplicateEncode(word){
     let length =0;
     let emptyArr = [];
+    let encodedStr ="";
     
-
     while(word[length]!=undefined){
     length++;
 }
-    
+//Parent for Loop for each character//
 for (let i =0; i<length; i++){
     let ResLetters ="";
-
+//Sibling for Loop creating word without current character to be looked at//
   for(let j = 0; j<length;j++){
-       if(i!=j){
+    if(i!=j){
        ResLetters= ResLetters + word[j];
-       
     }
   }
-  console.log(ResLetters);
-
+//Sibling for Loop checking current character being looked at in order to encode depending if it exist already//
   for(let k = 0; k < length-1; k++){
     if(word[i] === ResLetters[k]){
-      emptyStr[i] = ")";
-      console.log(emptyArr[i]);
+      emptyArr[i] = ")";
     }
     if(word[i] != ResLetters[k]){
-        emptyStr[i] ="(";
-        console.log(emptyArr);
+        emptyArr[i] ="(";
     }
   }
-
+//Array to String//
+encodedStr = encodedStr + emptyArr[i];
 }  
-return emptyStr;
+
+return encodedStr;
 }
