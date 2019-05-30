@@ -95,9 +95,8 @@ function getCount(str) {
 
   document.getElementById("javaScript").innerHTML = duplicateEncode("bye");
   function duplicateEncode(word){
-    let word = "byee";
     let length =0;
-    let emptyStr = "";
+    let emptyArr = [];
     
 
     while(word[length]!=undefined){
@@ -106,20 +105,23 @@ function getCount(str) {
     
 for (let i =0; i<length; i++){
     let ResLetters ="";
+
   for(let j = 0; j<length;j++){
        if(i!=j){
        ResLetters= ResLetters + word[j];
-       console.log(ResLetters);
+       
     }
   }
+  console.log(ResLetters);
 
   for(let k = 0; k < length-1; k++){
     if(word[i] === ResLetters[k]){
-      emptyStr = emptyStr + ")";
+      emptyStr[i] = ")";
+      console.log(emptyArr[i]);
     }
     if(word[i] != ResLetters[k]){
-        emptyStr = emptyStr + "(";
-        console.log(emptyStr);
+        emptyStr[i] ="(";
+        console.log(emptyArr);
     }
   }
 
