@@ -95,25 +95,31 @@ function getCount(str) {
 
   document.getElementById("javaScript").innerHTML = duplicateEncode("bye");
   function duplicateEncode(word){
- 
+    let word = "byee";
     let length =0;
     let emptyStr = "";
     
+
     while(word[length]!=undefined){
     length++;
 }
-
+    
 for (let i =0; i<length; i++){
-  
+    let ResLetters ="";
   for(let j = 0; j<length;j++){
-    if(word[i] === word[j]){
-      emptyStr = emptyStr + ")";
+       if(i!=j){
+       ResLetters= ResLetters + word[j];
+       console.log(ResLetters);
     }
   }
 
-  for(let k = 0; k<length;k++){
-    if(word[i] === word[j]){
+  for(let k = 0; k < length-1; k++){
+    if(word[i] === ResLetters[k]){
       emptyStr = emptyStr + ")";
+    }
+    if(word[i] != ResLetters[k]){
+        emptyStr = emptyStr + "(";
+        console.log(emptyStr);
     }
   }
 
