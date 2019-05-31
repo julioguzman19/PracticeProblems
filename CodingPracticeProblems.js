@@ -97,7 +97,7 @@ function getCount(str) {
 
 /*Encoding characters depending if dupe in word or not*/
 /*Ex: bye = '(((' byee = '(())'  ebye = ')(()'*/
-  document.getElementById("javaScript").innerHTML = duplicateEncode("byeea");
+/*   document.getElementById("javaScript").innerHTML = duplicateEncode("byeea"); */
   function duplicateEncode(word){
     let length =0;
     let emptyArr = [];
@@ -129,4 +129,22 @@ encodedStr = encodedStr + emptyArr[i];
 }  
 
 return encodedStr;
+}
+
+//Max Number in Array//
+document.getElementById("javaScript").innerHTML = findMax([1,2,6,4,3,4])
+function findMax(vals){
+    length = 0;
+let curMax = vals[0];
+
+    while(vals[length]!=undefined){
+        length++;
+    }
+    
+    for(let i=0; i<length;i++){
+        if(vals[i]>curMax){
+            curMax = vals[i];
+        }
+    }
+    return(curMax);
 }
