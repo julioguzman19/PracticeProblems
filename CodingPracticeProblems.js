@@ -103,11 +103,12 @@ function getCount(str) {
 /*Ex: bye = '(((' byee = '(())'  ebye = ')(()'*/
    document.getElementById("javaScript").innerHTML = duplicateEncode("avbnmoa"); 
   function duplicateEncode(word){
+    let wordInputted = word.toLowerCase();
     let len =0;
     let emptyArr = [];
     let encodedStr ="";
     
-    while(word[len]!=undefined){
+    while(wordInputted[len]!=undefined){
     len++;
 }
 //Parent for Loop for each character//
@@ -116,17 +117,17 @@ for (let i =0; i<len; i++){
 //Sibling for Loop creating word without current character to be looked at//
   for(let j = 0; j<len;j++){
     if(i!=j){
-       ResLetters= ResLetters + word[j];
+       ResLetters= ResLetters + wordInputted[j];
     }
   }
 //Sibling for Loop checking current character being looked at in order to encode depending if it exist already//
   for(let k = 0; k < len-1; k++){
     
-    if(word[i] === ResLetters[k]){
+    if(wordInputted[i] === ResLetters[k]){
       emptyArr[i] = ")";
       k = len-1;
     }  else{
-    (word[i] != ResLetters[k])
+    (wordInputted[i] != ResLetters[k])
         emptyArr[i] ="(";
     }
   }
