@@ -158,5 +158,33 @@ let curMax = vals[0];
     }
     return(curMax);
 
-    document.getElementById("javaScript").innerHTML = "testing flowingfrom js file to html"
 }
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+//Reverses words with 5 or more letters in string//
+
+document.getElementById("javaScript").innerHTML = spinWords("Hi my name starts again with letter j");
+
+function spinWords(){
+    let len = 0;
+    let newString = "";
+    let wordNumber = 0;
+    
+    
+    while(spinWords[len] != undefined){
+    len++;
+    }
+    console.log(len);
+    for(let i =0; i < len; i++){
+    
+      while(spinWords[i] != ""){
+      wordNumber++;
+      console.log(wordNumber);
+      }
+      
+      
+      
+    }
+  }
