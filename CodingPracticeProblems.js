@@ -8,6 +8,7 @@ function stringLength(input){
     return strLength;
     }
 
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 /*FAIL - Alphabet Position in String*/
 /* document.getElementById("javaScript").innerHTML = alphabetPosition("a b c");
@@ -40,13 +41,13 @@ function alphabetPosition(input){
             }
         }
 
-
     output = output.join(" ");
     let string = output + "";
-
     return string;
-
 }
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 /* Vowels Count in string */
 /* document.getElementById("javaScript").innerHTML = getCount("roberto"); */
@@ -78,6 +79,7 @@ function getCount(str) {
   }
 
 
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
   /* Binary Conversion from integer to Binary */
   //document.getElementById("javaScript").innerHTML = Binary(2,2);//
@@ -95,32 +97,36 @@ function getCount(str) {
   }
 
 
-/*Encoding characters depending if dupe in word or not*/
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+/*FAIL***Encoding characters depending if dupe in word or not*/
 /*Ex: bye = '(((' byee = '(())'  ebye = ')(()'*/
-/*   document.getElementById("javaScript").innerHTML = duplicateEncode("byeea"); */
+   document.getElementById("javaScript").innerHTML = duplicateEncode("avbnmoa"); 
   function duplicateEncode(word){
-    let length =0;
+    let len =0;
     let emptyArr = [];
     let encodedStr ="";
     
-    while(word[length]!=undefined){
-    length++;
+    while(word[len]!=undefined){
+    len++;
 }
 //Parent for Loop for each character//
-for (let i =0; i<length; i++){
+for (let i =0; i<len; i++){
     let ResLetters ="";
 //Sibling for Loop creating word without current character to be looked at//
-  for(let j = 0; j<length;j++){
+  for(let j = 0; j<len;j++){
     if(i!=j){
        ResLetters= ResLetters + word[j];
     }
   }
 //Sibling for Loop checking current character being looked at in order to encode depending if it exist already//
-  for(let k = 0; k < length-1; k++){
+  for(let k = 0; k < len-1; k++){
+    
     if(word[i] === ResLetters[k]){
       emptyArr[i] = ")";
-    }
-    if(word[i] != ResLetters[k]){
+      k = len-1;
+    }  else{
+    (word[i] != ResLetters[k])
         emptyArr[i] ="(";
     }
   }
@@ -131,8 +137,11 @@ encodedStr = encodedStr + emptyArr[i];
 return encodedStr;
 }
 
-//Max Number in Array//
-document.getElementById("javaScript").innerHTML = findMax([1,2,6,4,3,4])
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+//Max Number in Array - Success//
+/* document.getElementById("javaScript").innerHTML = findMax([1,2,6,4,3,4]) */
 function findMax(vals){
     length = 0;
 let curMax = vals[0];
@@ -147,4 +156,6 @@ let curMax = vals[0];
         }
     }
     return(curMax);
+
+    document.getElementById("javaScript").innerHTML = "testing flowingfrom js file to html"
 }
