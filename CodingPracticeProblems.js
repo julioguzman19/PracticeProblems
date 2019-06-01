@@ -163,9 +163,9 @@ let curMax = vals[0];
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-//Reverses words with 5 or more letters in string//
+//FAIL!!! Reverses words with 5 or more letters in string//
 
-document.getElementById("javaScript").innerHTML = spinWords("Hi my name starts again with letter j");
+/* document.getElementById("javaScript").innerHTML = spinWords("Hi my name starts again with letter j"); */
 
 function spinWords(){
     let len = 0;
@@ -176,7 +176,7 @@ function spinWords(){
     while(spinWords[len] != undefined){
     len++;
     }
-    console.log(len);
+    console.log(le,  n);
     for(let i =0; i < len; i++){
     
       while(spinWords[i] != ""){
@@ -185,6 +185,38 @@ function spinWords(){
       }
       
       
-      
     }
+  }
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/* var str = "How can mirrors be real if our eyes aren't real";
+Test.assertEquals(str.toJadenCase(), "How Can Mirrors Be Real If Our Eyes Aren't Real"); */
+
+document.getElementById("javaScript").innerHTML = firstCapital("Hi my name starts again with letter j");
+   
+function firstCapital(){
+    //...
+    let len = 0;
+    
+    while(firstCapital[len]) != undefined){
+    len++;
+    }
+
+    str[0] = str[0].toUpperCase();
+    
+    for(let i = 0; i < len; i++){
+      if(str[i] ===" "){
+        str[i+1] = str[i+1].toUpperCase();
+      }
+    }
+    return str;
+  }
+
+  /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+  /*In Class Activity*/
+
+  /* document.getElementById("javaScript").innerHTML = classActivity(); */
+
+  function classActivity(){
+    console.log("Hello World");
   }
