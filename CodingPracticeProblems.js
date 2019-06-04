@@ -99,9 +99,9 @@ function getCount(str) {
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-/*FAIL***Encoding characters depending if dupe in word or not*/
+/*SUCCESS Encoding characters depending if dupe in word or not*/
 /*Ex: bye = '(((' byee = '(())'  ebye = ')(()'*/
-   document.getElementById("javaScript").innerHTML = duplicateEncode("avbnmoa"); 
+ /*   document.getElementById("javaScript").innerHTML = duplicateEncode("avbnmoa");  */
   function duplicateEncode(word){
     let wordInputted = word.toLowerCase();
     let len =0;
@@ -192,25 +192,69 @@ function spinWords(){
 /* var str = "How can mirrors be real if our eyes aren't real";
 Test.assertEquals(str.toJadenCase(), "How Can Mirrors Be Real If Our Eyes Aren't Real"); */
 
-document.getElementById("javaScript").innerHTML = firstCapital("Hi my name starts again with letter j");
-   
-function firstCapital(){
+/* document.getElementById("javaScript").innerHTML = firstCapital("hi my name starts again with Letter j");    */
+function firstCapital(str){
     //...
     let len = 0;
+    let strInputted = str; 
+    let emptyArr = [];
+    let emptyStr = "";
     
-    while(firstCapital[len]) != undefined){
+    while(strInputted[len]!= undefined){
     len++;
     }
-
-    str[0] = str[0].toUpperCase();
     
     for(let i = 0; i < len; i++){
-      if(str[i] ===" "){
-        str[i+1] = str[i+1].toUpperCase();
+      emptyStr = strInputted[0].toUpperCase();
+      if(strInputted[i] ===" "){
+        emptyStr = emptyStr + strInputted[i+1].toUpperCase();
       }
+    /*   else{
+        emptyStr = emptyStr + strInputted[]
+      } */
     }
-    return str;
+   
+    return emptyStr;
+    
   }
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/* You live in the city of Cartesia where all roads are laid out in a perfect grid. You arrived ten minutes too early to an appointment, so you decided to take the 
+opportunity to go for a short walk. The city provides its citizens with a Walk Generating App on their phones -- everytime you press the button it sends you an 
+array of one-letter strings representing directions to walk (eg. ['n', 's', 'w', 'e']). You always walk only a single block in a direction and you know it takes 
+you one minute to traverse one city block, so create a function that will return true if the walk the app gives you will take you exactly ten minutes 
+(you don't want to be early or late!) and will, of course, return you to your starting point. Return false otherwise. */
+
+let walk =["n","s"];
+document.getElementById("javaScript").innerHTML = isValidWalk(walk);
+
+function isValidWalk(walk){
+let northCount = 0;
+let eastCount = 0;
+let southCount = 0;
+let westCount = 0;
+
+if(walk.length>10){
+  return 'false';
+}
+
+if(walk.legnth<10){
+  for(let i=0; i<walk.length;i++){
+    if(walk[i] === 'n'){
+      northCount = northCount +1;
+    }
+    else if(walk[i] === 'e'){
+      eastCount = eastCount+1
+    }
+  }
+}
+}
+
+
+
+
+
+
 
   /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
   /*In Class Activity*/
@@ -218,5 +262,7 @@ function firstCapital(){
   /* document.getElementById("javaScript").innerHTML = classActivity(); */
 
   function classActivity(){
+    for(let i=0; i<10; i++){
     console.log("Hello World");
+    }
   }
