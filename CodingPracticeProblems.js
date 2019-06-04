@@ -225,7 +225,7 @@ array of one-letter strings representing directions to walk (eg. ['n', 's', 'w',
 you one minute to traverse one city block, so create a function that will return true if the walk the app gives you will take you exactly ten minutes 
 (you don't want to be early or late!) and will, of course, return you to your starting point. Return false otherwise. */
 
-let walk =["n","s"];
+let walk =["n","s","n","s","n","s","n","s","e","w"];
 document.getElementById("javaScript").innerHTML = isValidWalk(walk);
 
 function isValidWalk(walk){
@@ -238,14 +238,31 @@ if(walk.length>10){
   return 'false';
 }
 
-if(walk.legnth<10){
+if(walk.length<10){
+  //getting count of each direction
   for(let i=0; i<walk.length;i++){
     if(walk[i] === 'n'){
       northCount = northCount +1;
     }
     else if(walk[i] === 'e'){
-      eastCount = eastCount+1
+      eastCount = eastCount+1;
     }
+    else if(walk[i] === 's'){
+      southCount = southCount +1;
+    }
+    else if(walk[i] === 'w'){
+      westCount = westCount +1;
+    }
+  }
+  
+  //making sure each count equals to opposite
+
+  if(northCount === southCount && eastCount === westCount){
+    return 'true';
+  } 
+  else {
+ 
+    return 'false';
   }
 }
 }
