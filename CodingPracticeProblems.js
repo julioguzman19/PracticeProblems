@@ -289,3 +289,17 @@ if(walk.length === 10){
       "false";
     }
   }
+
+  /*Optimizing Palindrome as other performs at level 'n' when we can be perfomring at 'n/2' since we can cut string in half*/
+  function palindrome(str){
+
+    for (var i = str.length - 1; i >= 0; i--){        
+      compareStr = compareStr+str[i];
+    } 
+    if(compareStr === str){
+      return "true";
+    }
+    else{
+      "false";
+    }
+  }
