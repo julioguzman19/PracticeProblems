@@ -273,8 +273,8 @@ if(walk.length === 10){
   }
 
   /*Palindrome check if palindrome like noon and racecar*/
-  let str = "noon";
-  document.getElementById("javaScript").innerHTML = palindrome(str);
+/* let str = "noon"
+  document.getElementById("javaScript").innerHTML = palindrome(str);  */
 
   function palindrome(str){
     let compareStr = "";
@@ -291,15 +291,16 @@ if(walk.length === 10){
   }
 
   /*Optimizing Palindrome as other performs at level 'n' when we can be perfomring at 'n/2' since we can cut string in half*/
-  function palindrome(str){
+  let str = "racecar";
+  document.getElementById("javaScript").innerHTML = palindromeOptimized(str);
+  function palindromeOptimized(str){
 
-    for (var i = str.length - 1; i >= 0; i--){        
-      compareStr = compareStr+str[i];
-    } 
-    if(compareStr === str){
-      return "true";
-    }
-    else{
-      "false";
+    for (let i = 0; i < Math.floor(str.length/2); i++){        
+      if(str[i] !== str[str.length-i-1]){
+        return false;
+      }
+      else {
+        return true;
+      }
     }
   }
