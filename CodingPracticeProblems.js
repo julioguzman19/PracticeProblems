@@ -192,30 +192,18 @@ function spinWords(){
 /* var str = "How can mirrors be real if our eyes aren't real";
 Test.assertEquals(str.toJadenCase(), "How Can Mirrors Be Real If Our Eyes Aren't Real"); */
 
-document.getElementById("javaScript").innerHTML = firstCapital("hi my name starts again with Letter j");   
+/* document.getElementById("javaScript").innerHTML = firstCapital("hi my name starts again with Letter j");  */  
 function firstCapital(str){
     //...
-    let len = 0;
-    let strInputted = str; 
-    let emptyArr = [];
-    let emptyStr = "";
-    
-    while(strInputted[len]!= undefined){
-    len++;
-    }
-    
-    for(let i = 0; i < len; i++){
-      emptyStr = strInputted[0].toUpperCase();
-      if(strInputted[i] ===" "){
-        emptyStr = emptyStr + strInputted[i+1].toUpperCase();
+    str[0] = str.charAt(0).toUpperCase();
+
+    for(let i=0; i<str.length;i++){
+
+      if(str[i] === undefined){
+        str[i+1] = str[i+1].toUpperCase();
       }
-    /*   else{
-        emptyStr = emptyStr + strInputted[]
-      } */
     }
-   
-    console.log(str.length);
-    
+    return str[0];
   }
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -281,5 +269,23 @@ if(walk.length === 10){
   function classActivity(){
     for(let i=0; i<10; i++){
     console.log("Hello World");
+    }
+  }
+
+  /*Palindrome check if palindrome like noon and racecar*/
+  let str = "noon";
+  document.getElementById("javaScript").innerHTML = palindrome(str);
+
+  function palindrome(str){
+    let compareStr = "";
+
+    for (var i = str.length - 1; i >= 0; i--){        
+      compareStr = compareStr+str[i];
+    } 
+    if(compareStr === str){
+      return "true";
+    }
+    else{
+      "false";
     }
   }
