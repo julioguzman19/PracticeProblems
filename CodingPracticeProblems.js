@@ -192,18 +192,19 @@ function spinWords(){
 /* var str = "How can mirrors be real if our eyes aren't real";
 Test.assertEquals(str.toJadenCase(), "How Can Mirrors Be Real If Our Eyes Aren't Real"); */
 
-/* document.getElementById("javaScript").innerHTML = firstCapital("hi my name starts again with Letter j");  */  
+ document.getElementById("javaScript").innerHTML = firstCapital("hi my name starts again with Letter j");   
 function firstCapital(str){
     //...
-    str[0] = str.charAt(0).toUpperCase();
+    jadedString ="";
+    jadedString = str[0].toUpperCase();
 
     for(let i=0; i<str.length;i++){
 
-      if(str[i] === undefined){
-        str[i+1] = str[i+1].toUpperCase();
+      if(str[i] === 'm'){
+        jadedString = jadedString + str[i].toUpperCase();
       }
     }
-    return str[0];
+    return jadedString;
   }
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -260,7 +261,6 @@ if(walk.length === 10){
 
 
 
-
   /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
   /*In Class Activity*/
 
@@ -291,8 +291,8 @@ if(walk.length === 10){
   }
 
   /*Optimizing Palindrome as other performs at level 'n' when we can be perfomring at 'n/2' since we can cut string in half*/
-  let str = "racecar";
-  document.getElementById("javaScript").innerHTML = palindromeOptimized(str);
+/*   let str = "racecar";
+  document.getElementById("javaScript").innerHTML = palindromeOptimized(str); */
   function palindromeOptimized(str){
 
     for (let i = 0; i < Math.floor(str.length/2); i++){        
