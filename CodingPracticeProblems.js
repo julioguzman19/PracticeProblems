@@ -304,11 +304,11 @@ if(walk.length === 10){
 
   function setup(){
 
-    let timer = $('#timer');
+     /* let timer = $('#timer');  */ //hmmm why do we need this
     $('#timer').html(counter);
 
     function timeIt(){
-      counter++; //every second will increte the counter
+      counter--; //every second will increase the counter
       $('#timer').html(counter); //updating the Dom Element everything second
     }
 
