@@ -192,7 +192,7 @@ function spinWords(){
 /* var str = "How can mirrors be real if our eyes aren't real";
 Test.assertEquals(str.toJadenCase(), "How Can Mirrors Be Real If Our Eyes Aren't Real"); */
 
- document.getElementById("javaScript").innerHTML = firstCapital("hi my name starts again with Letter j");   
+ /* document.getElementById("javaScript").innerHTML = firstCapital("hi my name starts again with Letter j"); */   
 function firstCapital(str){
     //...
     let jadedString =str.split(' ');
@@ -260,6 +260,40 @@ if(walk.length === 10){
 
 
   /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+  //add up numbers in range ex: -1 and 1 = 0// 
+  //1 and 1 = 0//
+  //-1 and 2 = -1 + 0 + 1 +2 = 2//
+ /*  document.getElementById("javaScript").innerHTML = getSumRange(-13,1); */
+  
+  function getSumRange(a,b){
+    let sum = 0;
+
+    if(a > b){
+      for(let i =b; i = a; i++){
+        sum = sum + i;
+        return sum;
+        console.log(a,b);
+      }
+    }
+
+    else if(a<b){
+      for(let i = a; i < b; i++){
+        sum = sum+i;
+        console.log(a,b,sum);
+        return sum;
+        
+      }
+    }
+
+    else {
+      return a;
+      console.log(a,b);
+    }
+    
+  }
+  
+    /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
   /*In Class Activity*/
 
   /* document.getElementById("javaScript").innerHTML = classActivity(); */
