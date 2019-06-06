@@ -294,14 +294,25 @@ if(walk.length === 10){
   
     /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-    document.getElementById("javaScript").innerHTML = setup();
+  /*Creating Simple Time*/
+  //Displays
+  $(document).ready(function(){
+    setup();
+  })
+
+  let counter = 0; //global variable  to later be changed
 
   function setup(){
 
-    var timer = select('#timer');
- 
-    $('#timer').html(timer);
+    let timer = $('#timer');
+    $('#timer').html(counter);
 
+    function timeIt(){
+      counter++; //every second will increte the counter
+      $('#timer').html(counter); //updating the Dom Element everything second
+    }
+
+    setInterval(timeIt,1000); //every second will run time It as 1000 milliseconds = 1 second
   }
 
 
