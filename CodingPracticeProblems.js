@@ -301,12 +301,16 @@ if(walk.length === 10){
     setup();
   })
 
-  let counter = 78; //global variable  to later be changed
+  let counter = 5000; //global variable  to later be changed
 
   function convertSeconds(s){
     let min = Math.floor(s/60);
     let sec = s % 60;
-    return (min + ':' + sec);
+
+    //NEED TO FIX THIS LOGIC as doesnt work for seconds
+  
+      return (min + ':' + sec);
+
   }
 
   function setup(){
