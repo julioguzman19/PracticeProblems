@@ -195,16 +195,14 @@ Test.assertEquals(str.toJadenCase(), "How Can Mirrors Be Real If Our Eyes Aren't
  document.getElementById("javaScript").innerHTML = firstCapital("hi my name starts again with Letter j");   
 function firstCapital(str){
     //...
-    jadedString ="";
-    jadedString = str[0].toUpperCase();
+    let jadedString =str.split(' ');
 
-    for(let i=0; i<str.length;i++){
+    for(let i =0; i<str.length ; i++){
 
-      if(str[i] === 'm'){
-        jadedString = jadedString + str[i].toUpperCase();
+    jadedString[i] = jadedString[i].charAt(0).ToUpperCase() + jadedString[i].substring(1)
       }
-    }
     return jadedString;
+    
   }
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
