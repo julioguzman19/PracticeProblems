@@ -301,28 +301,23 @@ if(walk.length === 10){
     setup();
   })
 
-  let counter = 5000; //global variable  to later be changed
+  let counter = 63; //global variable  to later be changed
 
   function convertSeconds(s){
     let min = Math.floor(s/60);
     let sec = s % 60;
-
-    //NEED TO FIX THIS LOGIC as doesnt work for seconds
-  
-      return (min + ':' + sec);
-
+    return (min + ':' + sec);//NEED TO FIX THIS LOGIC to include leading zeros
   }
-
+ 
   function setup(){
-     /* let timer = $('#timer');  */ //hmmm why do we need this
-    $('#timer').html(convertSeconds(counter));
-    function timeIt(){
-      counter--; //every second will increase the counter
-      $('#timer').html(convertSeconds(counter)); //updating the Dom Element everything second
-    }
+    $('#timer').html(convertSeconds(counter)); //initial set up of Dom Element to display the start time
     setInterval(timeIt,1000); //every second will run time It as 1000 milliseconds = 1 second
   }
-
+  //Function to decrease the time counter 
+  function timeIt(){
+    counter--; //every second will decrease the counter
+    $('#timer').html(convertSeconds(counter)); //updating the Dom Element everything second
+  }
 
 
     /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
