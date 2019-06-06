@@ -294,26 +294,31 @@ if(walk.length === 10){
   
     /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-  /*Creating Simple Time*/
+  
+    /*Creating Simple Time*/
   //Displays
   $(document).ready(function(){
     setup();
   })
 
-  let counter = 0; //global variable  to later be changed
+  let counter = 78; //global variable  to later be changed
+
+  function convertSeconds(s){
+    let min = Math.floor(s/60);
+    let sec = s % 60;
+    return (min + ':' + sec);
+  }
 
   function setup(){
-
      /* let timer = $('#timer');  */ //hmmm why do we need this
-    $('#timer').html(counter);
-
+    $('#timer').html(convertSeconds(counter));
     function timeIt(){
       counter--; //every second will increase the counter
-      $('#timer').html(counter); //updating the Dom Element everything second
+      $('#timer').html(convertSeconds(counter)); //updating the Dom Element everything second
     }
-
     setInterval(timeIt,1000); //every second will run time It as 1000 milliseconds = 1 second
   }
+
 
 
     /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
