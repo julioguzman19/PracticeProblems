@@ -264,7 +264,7 @@ if(walk.length === 10){
   //1 and 1 = 0//
   //-1 and 2 = -1 + 0 + 1 +2 = 2//
 
-  document.getElementById("javaScript").innerHTML = getSumRange(-1,2); 
+  /* document.getElementById("javaScript").innerHTML = getSumRange(-1,2);  */
   
   function getSumRange(a,b){
     let sum = 0;
@@ -325,14 +325,39 @@ if(walk.length === 10){
 
     /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-  /*In Class Activity*/
+  /*IN CLASS ACTIVITIES*/
 
-  /* document.getElementById("javaScript").innerHTML = classActivity(); */
+  /* List of numbers return strings for divisible by 3 or 5 or 3 and 5 */
+  /* 
+  fizz if multiple of 3
+  buzz if multiple of 5
+  fizzbuzz if multiple of 3 and 5 */
+
+  document.getElementById("javaScript").innerHTML = divisibleThreeOrFiveOrBoth(); 
 
   function classActivity(){
-    for(let i=0; i<10; i++){
-    console.log("Hello World");
+    let arrNumbers = [];
+
+    for(let i=1; i<16; i++){
+      
+      if(i%3 === 0 && i%5 ==0 ){
+        arrNumbers[i] = "fizzbuzz"
+      }
+
+      else if(i % 3 === 0){
+        arrNumbers [i] = "fizz"
+      }
+
+      else if(i % 5 === 0){
+        arrNumbers [i] = "buzz"
+      }
+
+      else{
+        arrNumbers[i] = i;
+      }
     }
+
+    return arrNumbers;
   }
 
   /*Palindrome check if palindrome like noon and racecar*/
@@ -367,3 +392,4 @@ if(walk.length === 10){
       }
     }
   }
+
