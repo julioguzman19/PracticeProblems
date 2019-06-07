@@ -323,12 +323,25 @@ if(walk.length === 10){
     return (min + ':' + sec);//NEED TO FIX THIS LOGIC to include leading zeros
   }
 
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+document.getElementById("javaScript").innerHTML = removeStrings["a",2,"b",3,4];
+
+function removeStrings(arr){
+
+}
+
+
+
     /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
   /*IN CLASS ACTIVITIES*/
 
-  /*PRIME NUMBER*/
-  document.getElementById("javaScript").innerHTML = isPrime(7);
+ 
+ 
+ 
+  /*FAIL! PRIME NUMBER*/
+ /*  document.getElementById("javaScript").innerHTML = isPrime(7); */
 
   function isPrime(n){
 
