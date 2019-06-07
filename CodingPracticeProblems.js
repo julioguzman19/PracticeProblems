@@ -260,54 +260,52 @@ if(walk.length === 10){
 
 
   /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-  //add up numbers in range ex: -1 and 1 = 0// 
+  //add up numbers in range ex: -1 and 1 = -1 + 0 + 1 = 0// 
   //1 and 1 = 0//
   //-1 and 2 = -1 + 0 + 1 +2 = 2//
- /*  document.getElementById("javaScript").innerHTML = getSumRange(-13,1); */
+
+  document.getElementById("javaScript").innerHTML = getSumRange(-1,2); 
   
   function getSumRange(a,b){
     let sum = 0;
 
     if(a > b){
-      for(let i =b; i = a; i++){
-        sum = sum + i;
-        return sum;
-        console.log(a,b);
+      i = b;
+      while(i !== a+1){
+        sum = sum+i;
+        console.log(a,b,sum);
+        i = i+1;
       }
     }
 
     else if(a<b){
-      for(let i = a; i < b; i++){
+      i =a;
+
+      while(i !== b+1){
         sum = sum+i;
-        console.log(a,b,sum);
-        return sum;
-        
+        console.log(a,b,sum,i);
+        i = i+1;
       }
     }
 
     else {
-      return a;
-      console.log(a,b);
+      return sum = a;
+      console.log(a,b,sum);
     }
-    
+
+    return sum;
   }
   
     /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-  
-    /*Creating Simple Time*/
+  /*CREATING SIMPLE TIMER*/
+
   //Displays
-  $(document).ready(function(){
+ /*  $(document).ready(function(){
     setup();
-  })
+  }) */
 
-  let counter = 63; //global variable  to later be changed
-
-  function convertSeconds(s){
-    let min = Math.floor(s/60);
-    let sec = s % 60;
-    return (min + ':' + sec);//NEED TO FIX THIS LOGIC to include leading zeros
-  }
+  /* let counter = 63; */ //global variable  to later be changed
  
   function setup(){
     $('#timer').html(convertSeconds(counter)); //initial set up of Dom Element to display the start time
@@ -318,7 +316,12 @@ if(walk.length === 10){
     counter--; //every second will decrease the counter
     $('#timer').html(convertSeconds(counter)); //updating the Dom Element everything second
   }
-
+//Function to convert to seconds and return mins and sec rather than sec only
+  function convertSeconds(s){
+    let min = Math.floor(s/60);
+    let sec = s % 60;
+    return (min + ':' + sec);//NEED TO FIX THIS LOGIC to include leading zeros
+  }
 
     /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
