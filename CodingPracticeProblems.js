@@ -327,13 +327,29 @@ if(walk.length === 10){
 
   /*IN CLASS ACTIVITIES*/
 
+  /*PRIME NUMBER*/
+  document.getElementById("javaScript").innerHTML = isPrime(7);
+
+  function isPrime(n){
+
+   /*  If checking prime */
+   for (let i = 2; i < n/2; i++){
+     if(n % i ===0){
+       return 'PRIME!';
+     }
+   }
+   return 'Not prime';
+  }
+  
+  
+  
   /* List of numbers return strings for divisible by 3 or 5 or 3 and 5 */
   /* 
   fizz if multiple of 3
   buzz if multiple of 5
   fizzbuzz if multiple of 3 and 5 */
 
-  document.getElementById("javaScript").innerHTML = divisibleThreeOrFiveOrBoth(); 
+  /* document.getElementById("javaScript").innerHTML = divisibleThreeOrFiveOrBoth();  */
 
   function divisibleThreeOrFiveOrBoth(){
     let arrNumbers = [];
