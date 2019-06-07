@@ -255,10 +255,6 @@ if(walk.length === 10){
 }
 
 
-
-
-
-
   /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
   //add up numbers in range ex: -1 and 1 = -1 + 0 + 1 = 0// 
   //1 and 1 = 0//
@@ -329,7 +325,12 @@ document.getElementById("javaScript").innerHTML = removeStrings["a",2,"b",3,4];
 
 function removeStrings(arr){
 
-}
+  emptyArr = [];
+
+    for(let i = 0; i<arr.length; i++){
+      console.log(typeof(arr[i]));
+    }
+  }
 
 
 
@@ -338,6 +339,18 @@ function removeStrings(arr){
   /*IN CLASS ACTIVITIES*/
 
  
+
+  document.getElementById("javaScript").innerHTML = bubbleSort[1,3,6,2,9,4];
+
+  function bubbleSort(arr){
+  
+    emptyArr = [];
+  
+      for(let i = 0; i<arr.length; i++){
+        console.log(typeof(arr[i]));
+      }
+    }
+
  
  
   /*FAIL! PRIME NUMBER*/
