@@ -335,7 +335,7 @@ if(walk.length === 10){
 
   document.getElementById("javaScript").innerHTML = divisibleThreeOrFiveOrBoth(); 
 
-  function classActivity(){
+  function divisibleThreeOrFiveOrBoth(){
     let arrNumbers = [];
 
     for(let i=1; i<16; i++){
