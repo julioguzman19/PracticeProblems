@@ -321,7 +321,7 @@ if(walk.length === 10){
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-document.getElementById("javaScript").innerHTML = removeStrings["a",2,"b",3,4];
+/* document.getElementById("javaScript").innerHTML = removeStrings["a",2,"b",3,4]; */
 
 function removeStrings(arr){
 
@@ -340,16 +340,15 @@ function removeStrings(arr){
 
  
 
-  document.getElementById("javaScript").innerHTML = bubbleSort[1,3,6,2,9,4];
+  document.getElementById("javaScript").innerHTML = bubbleSort(1,3,6,2,9,4);
 
   function bubbleSort(arr){
-  
-    emptyArr = [];
-  
-      for(let i = 0; i<arr.length; i++){
-        console.log(typeof(arr[i]));
-      }
+
+    for (let i = 0; i <arr.length; i++){
+      console.log(arr[i]);
     }
+
+  }
 
  
  
