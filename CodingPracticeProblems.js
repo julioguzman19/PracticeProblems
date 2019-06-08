@@ -339,7 +339,13 @@ function removeStrings(){
 document.getElementById("javaScript").innerHTML = doubleNumbers(); 
 
 function doubleNumbers(){
-  
+  let arr = [1,2,3,4];
+  let outputArray =[];
+
+  for(let i = 0; i<arr.length; i++){
+    outputArray.push(arr[i]*arr[i]);
+  }
+  return outputArray;
 }
 
 
