@@ -321,16 +321,21 @@ if(walk.length === 10){
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-/* document.getElementById("javaScript").innerHTML = removeStrings["a",2,"b",3,4]; */
+document.getElementById("javaScript").innerHTML = removeStrings(); 
 
-function removeStrings(arr){
+function removeStrings(){
+  let arr = ["a",2,4,"y"];
+  let emptyArr = [];
 
-  emptyArr = [];
-
-    for(let i = 0; i<arr.length; i++){
-      console.log(typeof(arr[i]));
+  for(let i = 0; i<arr.length;i++){
+    if(typeof(arr[i]) !== "string"){
+      emptyArr.push(arr[i]);
     }
   }
+  return emptyArr;
+}
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 
 
 
@@ -340,7 +345,7 @@ function removeStrings(arr){
 
  
 
-  document.getElementById("javaScript").innerHTML = bubbleSort(1,3,6,2,9,4);
+  /* document.getElementById("javaScript").innerHTML = bubbleSort(1,3,6,2,9,4); */
 
   function bubbleSort(arr){
 
