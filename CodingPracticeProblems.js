@@ -335,7 +335,8 @@ function removeStrings(){
   return emptyArr;
 }
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
+/* Return numbers in array multiplied by themselves */
+/* ex: [1,2,3] >>> [1,4,9] */
 /* document.getElementById("javaScript").innerHTML = doubleNumbers(); 
  */
 function doubleNumbers(){
@@ -348,16 +349,38 @@ function doubleNumbers(){
   return outputArray;
 }
 
-
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/*Fibonacci sums previous two numbers to get number*/
+/*tribonacci here we wil sum previous three numbers to get number*/
+/* 
+Test.assertSimilar(tribonacci([1,1,1],10),[1,1,1,3,5,9,17,31,57,105])
+Test.assertSimilar(tribonacci([0,0,1],10),[0,0,1,1,2,4,7,13,24,44]) 
+Test.assertSimilar(tribonacci([1,1,1],1),[1])
+Test.assertSimilar(tribonacci([300,200,100],0),[]) */
 
-
-
-document.getElementById("javaScript").innerHTML = tribonacci(); 
+document.getElementById("javaScript").innerHTML = tribonacci([1,2,3],1); 
 
 function tribonacci(signature,n){
+let sum = 0;
+let emptyArr = [];
 
+if(n>2){
+  for(let i =0; i<n; i++){
+    if(signature[i] === undefined){
+      sum = signature[i-1]+ signature[i-2]+ signature[i-3];
+      signature.push(sum);
+    }
+  }
+}
 
+if(n<=2){
+  for(let i =0; i<n; i++){
+  emptyArr.push(signature[i]);
+  }
+  signature = emptyArr;
+
+}
+return signature;
 }
 
     /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
