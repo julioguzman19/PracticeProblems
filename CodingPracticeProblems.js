@@ -358,7 +358,7 @@ Test.assertSimilar(tribonacci([0,0,1],10),[0,0,1,1,2,4,7,13,24,44])
 Test.assertSimilar(tribonacci([1,1,1],1),[1])
 Test.assertSimilar(tribonacci([300,200,100],0),[]) */
 
-document.getElementById("javaScript").innerHTML = tribonacci([1,2,3],1); 
+/* document.getElementById("javaScript").innerHTML = tribonacci([1,2,3],1); */ 
 
 function tribonacci(signature,n){
 let sum = 0;
@@ -383,6 +383,28 @@ if(n<=2){
 return signature;
 }
 
+
+
+document.getElementById("javaScript").innerHTML = validPhoneNumbers("(209)2313-111");
+
+function validPhoneNumbers(phoneNumber){
+
+  let count = 0;
+
+  for(let i=0;i<phoneNumber.length;i++){
+    if(phoneNumber.charAt(i) === "0"||phoneNumber.charAt(i) === "1"||phoneNumber.charAt(i) === "02"||
+    phoneNumber.charAt(i) === "3"||phoneNumber.charAt(i) === "4"||phoneNumber.charAt(i) === "5"||phoneNumber.charAt(i) === "6"||
+    phoneNumber.charAt(i) === "7"||phoneNumber.charAt(i) === "8"||phoneNumber.charAt(i) === "9"){
+      count = count +1;
+    }
+  }
+  if(count ===7){
+    return 'true';
+  }
+  else{
+    return 'false';
+  }
+}
     /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
   /*IN CLASS ACTIVITIES*/
 
