@@ -504,3 +504,27 @@ function validPhoneNumbers(phoneNumber){
     }
   }
 
+  //Pangram check all letters in abc in string
+  document.getElementById("javaScript").innerHTML = pangram("We promptly judged antique ivory buckles for the next prize");
+
+  function pangram(str){
+    let abcArr = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
+    let strLen = str.length;
+    str = str.toLowerCase();
+    let answer = "true";
+
+    for (let i=0; i<26;i++ ){
+      
+      for(let k=0; k<strLen;k++){
+        if(str.charAt(k) === abcArr[i]){
+          answer = "true";
+          k = str.Len
+        }
+        else{
+          answer = "false"
+        }
+      }
+    }
+    return answer;
+  }
+
