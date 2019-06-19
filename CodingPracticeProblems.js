@@ -505,6 +505,8 @@ function validPhoneNumbers(phoneNumber){
   }
 
   //Pangram check all letters in abc in string
+  /*Optimizing less code use index of with only one for loop indexof will return position of letter if not there will return -1
+     */
   document.getElementById("javaScript").innerHTML = pangram("We promptly judged antique ivory buckles for the next prize");
 
   function pangram(str){
