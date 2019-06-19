@@ -384,8 +384,8 @@ return signature;
 }
 
 
-
-document.getElementById("javaScript").innerHTML = validPhoneNumbers("(209)2313-111");
+//FAILING not fixed yet
+/* document.getElementById("javaScript").innerHTML = validPhoneNumbers("(209)213-1311"); */
 
 function validPhoneNumbers(phoneNumber){
 
@@ -398,7 +398,7 @@ function validPhoneNumbers(phoneNumber){
       count = count +1;
     }
   }
-  if(count ===7){
+  if(count ===10 && phoneNumber.charAt(0) ==="(" && phoneNumber.charAt(4) ===")" &&phoneNumber.charAt(8) ==="-"){
     return 'true';
   }
   else{
