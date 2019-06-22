@@ -405,8 +405,6 @@ function validPhoneNumbers(phoneNumber){
     return 'false';
   }
 }
-    /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-  /*IN CLASS ACTIVITIES*/
 
  
 
@@ -420,6 +418,7 @@ function validPhoneNumbers(phoneNumber){
 
   }
 
+  
  
  
   /*FAIL! PRIME NUMBER*/
@@ -507,7 +506,7 @@ function validPhoneNumbers(phoneNumber){
   //Pangram check all letters in abc in string
   /*Optimizing less code use index of with only one for loop indexof will return position of letter if not there will return -1
      */
-  document.getElementById("javaScript").innerHTML = pangram("We promptly judged antique ivory buckles for the next prize");
+  /* document.getElementById("javaScript").innerHTML = pangram("We promptly judged antique ivory buckles for the next prize"); */
 
   function pangram(str){
     let abcArr = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
@@ -530,3 +529,14 @@ function validPhoneNumbers(phoneNumber){
     return answer;
   }
 
+
+  //Shape dimensions with given integer
+  //example: 3 is given 3 by 3 below is created
+/* +++
+   +++
+   +++ */
+  document.getElementById("javaScript").innerHTML = generateShape(3);
+
+  function generateShape(int){
+
+  }
