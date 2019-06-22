@@ -539,7 +539,19 @@ function validPhoneNumbers(phoneNumber){
 
   function generateShape(int){
 
-    let column = "";
-    let row = "";
-    for()
+    let shape = "";
+    
+    for(let i=0 ;i>int;i++){
+
+      for(let k=0;k>int;k++){
+
+        shape = shape +"+";
+        
+        if(k = int -1){
+          shape = (shape + '\n');
+        }
+      }
+    }
+    return shape;
+    console.log(int);
   }
