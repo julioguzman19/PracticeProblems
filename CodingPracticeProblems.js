@@ -541,17 +541,17 @@ function validPhoneNumbers(phoneNumber){
 
     let shape = "";
     
-    for(let i=0 ;i>int;i++){
+    for(let i=0 ;i<int;i++){
 
-      for(let k=0;k>int;k++){
+      for(let k=0;k<int;k++){
 
         shape = shape +"+";
         
-        if(k = int -1){
-          shape = (shape + '\n');
+        if(k === int -1 && i!== int-1){
+          shape = shape + "\n";
+          
         }
       }
     }
     return shape;
-    console.log(int);
   }
