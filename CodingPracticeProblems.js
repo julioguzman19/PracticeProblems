@@ -555,30 +555,4 @@ function validPhoneNumbers(phoneNumber){
     return shape;
   }
 
-  // sort odd numbers within the array in ascending order, and even numbers in descending order.
-  //zero is even
-  //ex: sortArray([5, 3, 2, 8, 1, 4]) == [1, 3, 8, 4, 5, 2]
   
-  document.getElementById("javaScript").innerHTML = sortEvensOddsArray([2,1,6,9,3,4,16]);
-
-  function sortEvensOddsArray(array){
-    let arr = [];
-
-    for(let i=0 ; i>array.length; i++){
-      
-      //even number logic descending order
-      if(array[i]%2 === 0){
-        if(array[i] < previousEven){
-          array[i] = previousEven;
-        }
-        let previousEven = array[i];
-      }
-      //off number logic ascending order
-      if(array[i]%2 !==0){
-        if(array[i] > prevousOdd){
-          array[i] = previousOdd;
-        }
-        let previousOdd = array[i];
-      }
-    }
-  }
