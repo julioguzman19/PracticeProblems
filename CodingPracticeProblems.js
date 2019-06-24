@@ -529,13 +529,12 @@ function validPhoneNumbers(phoneNumber){
     return answer;
   }
 
-
   //Shape dimensions with given integer
   //example: 3 is given 3 by 3 below is created
 /* +++
    +++
    +++ */
-  document.getElementById("javaScript").innerHTML = generateShape(3);
+  /* document.getElementById("javaScript").innerHTML = generateShape(3); */
 
   function generateShape(int){
 
@@ -554,4 +553,11 @@ function validPhoneNumbers(phoneNumber){
       }
     }
     return shape;
+  }
+
+  // sort odd numbers within the array in ascending order, and even numbers in descending order.
+  //zero is even
+  //ex: sortArray([5, 3, 2, 8, 1, 4]) == [1, 3, 8, 4, 5, 2]
+  function sortEvenOddsArray(array){
+
   }
