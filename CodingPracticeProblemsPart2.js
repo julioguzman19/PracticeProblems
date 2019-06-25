@@ -67,7 +67,15 @@
     return returnArray;
   }
 
+  //Return array with numbers prior to the number inserted excluding zero
+
   document.getElementById("javaScript").innerHTML = countTillNumber(4);
   function countTillNumber(n){
+    let arr=[];
+    arr[-1] = 0;
 
+    for(let i=0; i<n;i++){
+        arr[i] = arr[i-1] +1;
+    }
+    return arr;
   }
