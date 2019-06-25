@@ -2,7 +2,7 @@
   //zero is even
   //ex: sortArray([5, 3, 2, 8, 1, 4]) == [1, 3, 8, 4, 5, 2]
   
-  document.getElementById("javaScript").innerHTML = sortEvensOddsArray([1, 111, 11, 11, 2, 1, 5, 0]) +"   "+ "expect: 1, 1, 5, 11, 2, 11, 111, 0";
+  /* document.getElementById("javaScript").innerHTML = sortEvensOddsArray([1, 111, 11, 11, 2, 1, 5, 0]) +"   "+ "expect: 1, 1, 5, 11, 2, 11, 111, 0"; */
 
   function sortEvensOddsArray(array){
     
@@ -48,7 +48,7 @@
   //Open = not above >> ex: [23,2] or [55,3]
   //([[45, 12],[55,21],[19, -2],[104, 20]]),['Open', 'Senior', 'Open', 'Senior'])
 
-  document.getElementById("javaScript").innerHTML = openOrSenior([[45, 12],[55,21],[19, -2],[104, 20]]);
+  /* document.getElementById("javaScript").innerHTML = openOrSenior([[45, 12],[55,21],[19, -2],[104, 20]]); */
 
   function openOrSenior(data){
     returnArray = [];
@@ -65,4 +65,9 @@
         }
     }
     return returnArray;
+  }
+
+  document.getElementById("javaScript").innerHTML = countTillNumber(4);
+  function countTillNumber(n){
+
   }
