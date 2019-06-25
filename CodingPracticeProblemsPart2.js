@@ -42,3 +42,13 @@
    
     return array;
   }
+
+  //Catgorizing a new member based on age and handicap
+  //Senior = 55+ and 7+ >> ex: [56,7]
+  //Open = 54 - and 6- >> ex: [23,2]
+  
+  document.getElementById("javaScript").innerHTML = openOrSenior;
+
+  function openOrSenior(data){
+
+  }
