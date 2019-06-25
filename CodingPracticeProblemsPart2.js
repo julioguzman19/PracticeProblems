@@ -69,7 +69,7 @@
 
   //Return array with numbers prior to the number inserted excluding zero
 
-  document.getElementById("javaScript").innerHTML = countTillNumber(4);
+ /*  document.getElementById("javaScript").innerHTML = countTillNumber(4); */
   function countTillNumber(n){
     let arr=[];
     arr[-1] = 0;
@@ -78,4 +78,15 @@
         arr[i] = arr[i-1] +1;
     }
     return arr;
+  }
+
+  //Find next smallest number using integers from within the number
+  document.getElementById("javaScript").innerHTML = nextSmaller(12345);
+
+  function nextSmaller(n) {
+    let nextSmallest = "";
+
+
+    
+    return nextSmallest;
   }
