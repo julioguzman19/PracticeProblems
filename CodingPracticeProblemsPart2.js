@@ -44,11 +44,25 @@
   }
 
   //Catgorizing a new member based on age and handicap
-  //Senior = 55+ and 7+ >> ex: [56,7]
-  //Open = 54 - and 6- >> ex: [23,2]
-  
-  document.getElementById("javaScript").innerHTML = openOrSenior;
+  //Senior = 55+ AND 7+ >> ex: [56,7]
+  //Open = not above >> ex: [23,2] or [55,3]
+  //([[45, 12],[55,21],[19, -2],[104, 20]]),['Open', 'Senior', 'Open', 'Senior'])
+
+  document.getElementById("javaScript").innerHTML = openOrSenior([[45, 12],[55,21],[19, -2],[104, 20]]);
 
   function openOrSenior(data){
+    returnArray = [];
+    //to reference array within array [array position] [inner array position]
+    console.log(data[0][1]); //will return 12
 
+    for(let i=0;i<data.length;i++){
+
+        if(data[i][0] > 54 && data[i][1] > 7){
+            returnArray[i] = "Senior";
+        }
+        else{
+            returnArray[i] = "Open";
+        }
+    }
+    return returnArray;
   }
