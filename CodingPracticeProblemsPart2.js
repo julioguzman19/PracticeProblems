@@ -143,54 +143,25 @@ function getSize(width,height,depth){
   //Test.assertSimilar(sqInRect(5, 5), null)
   //Test.assertSimilar(sqInRect(5, 3), [3, 2, 1, 1])
 
-  document.getElementById("javaScript").innerHTML = squaresInRectangle(20,14); 
+  document.getElementById("javaScript").innerHTML = sqInRect(20,14); 
 
-  function squaresInRectangle(lng,wdth){
-      let arr =[];
-      let totalArea = lng * wdth;
-      let currentArea = 0;
-      let diff = totalArea - currentArea;
+  function sqInRect(lng,wdth){
 
     if(lng === wdth){
       return null;
     }
-    else if(lng > wdth){
-      let i = wdth;
-     
-        while(currentArea < totalArea && i > 0){
-          
-          if(Math.pow(i,2) < totalArea && diff >= Math.pow(i,2)){
-            currentArea = currentArea + Math.pow(i,2);
-            diff = totalArea - currentArea;
-            arr.push(i);
-          }
-             
-          else{
-            i = i-1;
-          }
-        
-        }
-        return arr;
-    }
-
-    else if(lng < wdth){
-      let i = lng;
-     
-        while(currentArea < totalArea && i > 0){
-          
-          if(Math.pow(i,2) < totalArea && diff >= Math.pow(i,2)){
-            currentArea = currentArea + Math.pow(i,2);
-            diff = totalArea - currentArea;
-            arr.push(i);
-          }
-             
-          else{
-            i = i-1;
-          }
-        
-        }
-        return arr;
-    }
- 
+    let arr = [];
+    
+    while(lng !==wdth){
+    let smaller = lng < wdth ? lng:wdth;
+    let bigger = lng > wdth ? lng:wdth;
+    
+    arr.push(smaller);
+    
+    lng = smaller;
+    wdth = bigger - smaller;
+  }
+  arr.push(lng);
   
+  return arr;
   }
