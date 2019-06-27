@@ -80,39 +80,56 @@
     return arr;
   }
 
+  //FAIL
   //Find next smallest number using integers from within the number 
   //log base 10 examples: log10(10), log10(1000), log10(1) >>> 1,3,0
   // returning last digit          Math.floor((1234 / 1) % 10); >>> 4
   //returning second to last digit Math.floor((1234 / 10) % 10 >>> 3
   //returning where 'n' is the number from the right returned Math.floor((1234 / Math.pow(10, n-1)) % 10)
 
-  document.getElementById("javaScript").innerHTML = nextSmaller(1234);
+  /* document.getElementById("javaScript").innerHTML = nextSmaller(51345); */
 
   function nextSmaller(n) {
-    let arr = [];
+    let finalArr = []; 
     let len = Math.floor((Math.log10(n)+1)) ; //getting number of digits taking the logorithm base 10 of the number then using math.floor to round down
+    len = len - 1; //as for array we will begin at position 0
     let answer = "";
-    let lowerNum = 0;
+    
 
-    //put number into array
-    for(let i=1; i<len+1; i++){
-        arr[len - i] = (Math.floor((n) / Math.pow(10,i-1)) % 10);
+    //Separating digits into array
+    let arr =[];
+    for(let i=0; i<len; i++){
+        arr[len -i] = (Math.floor((n) / Math.pow(10,i-1)) % 10);
     }
 
-    //Begin logic for second smallest
-
+    //Logic to get number < first number
+    //temp Arr
+    let smallNumbers = [];
     for(let i = 0; i<len ; i++){
         
-        for(let k = 0; k<len ; k++){
-            
-            if(arr[i] > arr[k] && arr[k] !== 0){
-                lowerNum = arr[k];
-                arr[k] = arr[i];
-                arr[i] = lowerNum
-            }
+        if(arr[0] > arr[i] && arr[i] !== 0){
+            smallNumbers.push(i);
+        }
+        
+    }
+
+    //Logic to get largest number from smallNumbers (array with smaller numbers)
+    let largestSmallNumber = [];
+    let largestNum = 0;
+    for(let i = 0; i<smallNumbers.length ; i++){
+
+        if(smallNumbers[i] > largestNum){
+            largestNum = smallNumbers[i]
         }
     }
 
-
     return arr;
   }
+
+//total surface area and volume of a box as an array: [area, volume].
+//ex: getSize(4, 2, 6)[1], 48)   getSize(10, 10, 10), [600, 1000])
+
+document.getElementById("javaScript").innerHTML = getSize(10,10,10);
+function getSize(width,height,depth){
+
+}
