@@ -138,12 +138,12 @@ function getSize(width,height,depth){
     
    /*  return currentNum; */
   }
-
+  //Success but need to review the code as different
   //Return size/area of each of the squares within rectangle (parameters given)
   //Test.assertSimilar(sqInRect(5, 5), null)
   //Test.assertSimilar(sqInRect(5, 3), [3, 2, 1, 1])
 
-  document.getElementById("javaScript").innerHTML = sqInRect(20,14); 
+  /* document.getElementById("javaScript").innerHTML = sqInRect(20,14); */ 
 
   function sqInRect(lng,wdth){
 
@@ -164,4 +164,8 @@ function getSize(width,height,depth){
   arr.push(lng);
   
   return arr;
+  }
+
+  function enough(cap, on, wait) {
+    // your code here
   }
