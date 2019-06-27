@@ -80,6 +80,25 @@
     return arr;
   }
 
+
+
+//total surface area and volume of a box as an array: [area, volume].
+//ex: getSize(4, 2, 6)[1], 48)   getSize(10, 10, 10), [600, 1000])
+
+/* document.getElementById("javaScript").innerHTML = getSize(10,10,10); */
+function getSize(width,height,depth){
+  //formula = SA=2lw+2lh+2hw
+  let surfaceArea = (2*depth*width) + (2*depth*height) + (2*height*width);
+  let volume = width * height * depth;
+  
+  arr =[];
+
+  arr.push(surfaceArea);
+  arr.push(volume);
+
+  return arr;
+}
+
   //FAIL
   //Find next smallest number using integers from within the number 
   //log base 10 examples: log10(10), log10(1000), log10(1) >>> 1,3,0
@@ -87,9 +106,9 @@
   //returning second to last digit Math.floor((1234 / 10) % 10 >>> 3
   //returning where 'n' is the number from the right returned Math.floor((1234 / Math.pow(10, n-1)) % 10)
 
-   document.getElementById("javaScript").innerHTML = nextSmaller(513425); 
+   /* document.getElementById("javaScript").innerHTML = nextSmaller(513425);  */
 
-  function nextSmaller(n) {
+   function nextSmaller(n) {
 
     //number of digits
     let len = Math.floor((Math.log10(n))) ; //getting number of digits minus one taking the logorithm base 10 of the number then using math.floor to round down
@@ -120,19 +139,9 @@
    /*  return currentNum; */
   }
 
-//total surface area and volume of a box as an array: [area, volume].
-//ex: getSize(4, 2, 6)[1], 48)   getSize(10, 10, 10), [600, 1000])
+  //Return size/area of each of the squares within rectangle (parameters given)
+  //Test.assertSimilar(sqInRect(5, 5), null)
+  //Test.assertSimilar(sqInRect(5, 3), [3, 2, 1, 1])
+  function squaresInRectangle(lng,wdth){
 
-/* document.getElementById("javaScript").innerHTML = getSize(10,10,10); */
-function getSize(width,height,depth){
-  //formula = SA=2lw+2lh+2hw
-  let surfaceArea = (2*depth*width) + (2*depth*height) + (2*height*width);
-  let volume = width * height * depth;
-  
-  arr =[];
-
-  arr.push(surfaceArea);
-  arr.push(volume);
-
-  return arr;
-}
+  }
