@@ -142,6 +142,55 @@ function getSize(width,height,depth){
   //Return size/area of each of the squares within rectangle (parameters given)
   //Test.assertSimilar(sqInRect(5, 5), null)
   //Test.assertSimilar(sqInRect(5, 3), [3, 2, 1, 1])
-  function squaresInRectangle(lng,wdth){
 
+  document.getElementById("javaScript").innerHTML = squaresInRectangle(20,14); 
+
+  function squaresInRectangle(lng,wdth){
+      let arr =[];
+      let totalArea = lng * wdth;
+      let currentArea = 0;
+      let diff = totalArea - currentArea;
+
+    if(lng === wdth){
+      return null;
+    }
+    else if(lng > wdth){
+      let i = wdth;
+     
+        while(currentArea < totalArea && i > 0){
+          
+          if(Math.pow(i,2) < totalArea && diff >= Math.pow(i,2)){
+            currentArea = currentArea + Math.pow(i,2);
+            diff = totalArea - currentArea;
+            arr.push(i);
+          }
+             
+          else{
+            i = i-1;
+          }
+        
+        }
+        return arr;
+    }
+
+    else if(lng < wdth){
+      let i = lng;
+     
+        while(currentArea < totalArea && i > 0){
+          
+          if(Math.pow(i,2) < totalArea && diff >= Math.pow(i,2)){
+            currentArea = currentArea + Math.pow(i,2);
+            diff = totalArea - currentArea;
+            arr.push(i);
+          }
+             
+          else{
+            i = i-1;
+          }
+        
+        }
+        return arr;
+    }
+ 
+  
   }
