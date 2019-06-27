@@ -87,49 +87,43 @@
   //returning second to last digit Math.floor((1234 / 10) % 10 >>> 3
   //returning where 'n' is the number from the right returned Math.floor((1234 / Math.pow(10, n-1)) % 10)
 
-  /* document.getElementById("javaScript").innerHTML = nextSmaller(51345); */
+   document.getElementById("javaScript").innerHTML = nextSmaller(513425); 
 
   function nextSmaller(n) {
-    let finalArr = []; 
-    let len = Math.floor((Math.log10(n)+1)) ; //getting number of digits taking the logorithm base 10 of the number then using math.floor to round down
-    len = len - 1; //as for array we will begin at position 0
-    let answer = "";
+
+    //number of digits
+    let len = Math.floor((Math.log10(n))) ; //getting number of digits minus one taking the logorithm base 10 of the number then using math.floor to round down
+
+    //Put digits into array
+    let numberArr = [];
+    for(let i=0; i<len+1; i++){
+                          // n / (10^i) %10 this will get the last digit depending on ith power
+      numberArr[len -i] = (Math.floor((n) / Math.pow(10,i)) % 10);//grabbing digits backgward thus inserting into array backwards
+  }
+
+    //Logic to get largest smaller number than first number
+    let position = 0;
+    let secondLargestNum =0;
+    for(let i =1; i<len + 1; i++){
+      if(numberArr[i] > secondLargestNum && numberArr[i] < numberArr[0]){
+        secondLargestNum = numberArr[i];
+        position = i;
+      }
+    }
+
+    //if there is second large number and position not zero swap second digit and the other
+    if(position !== 0 && secondLargestNum !==0){
+      numberArr[position] = numberArr[1]; 
+      numberArr[1] = secondLargestNum;
+    }
     
-
-    //Separating digits into array
-    let arr =[];
-    for(let i=0; i<len; i++){
-        arr[len -i] = (Math.floor((n) / Math.pow(10,i-1)) % 10);
-    }
-
-    //Logic to get number < first number
-    //temp Arr
-    let smallNumbers = [];
-    for(let i = 0; i<len ; i++){
-        
-        if(arr[0] > arr[i] && arr[i] !== 0){
-            smallNumbers.push(i);
-        }
-        
-    }
-
-    //Logic to get largest number from smallNumbers (array with smaller numbers)
-    let largestSmallNumber = [];
-    let largestNum = 0;
-    for(let i = 0; i<smallNumbers.length ; i++){
-
-        if(smallNumbers[i] > largestNum){
-            largestNum = smallNumbers[i]
-        }
-    }
-
-    return arr;
+   /*  return currentNum; */
   }
 
 //total surface area and volume of a box as an array: [area, volume].
 //ex: getSize(4, 2, 6)[1], 48)   getSize(10, 10, 10), [600, 1000])
 
-document.getElementById("javaScript").innerHTML = getSize(10,10,10);
+/* document.getElementById("javaScript").innerHTML = getSize(10,10,10); */
 function getSize(width,height,depth){
   //formula = SA=2lw+2lh+2hw
   let surfaceArea = (2*depth*width) + (2*depth*height) + (2*height*width);
