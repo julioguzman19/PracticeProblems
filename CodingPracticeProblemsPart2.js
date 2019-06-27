@@ -131,5 +131,14 @@
 
 document.getElementById("javaScript").innerHTML = getSize(10,10,10);
 function getSize(width,height,depth){
+  //formula = SA=2lw+2lh+2hw
+  let surfaceArea = (2*depth*width) + (2*depth*height) + (2*height*width);
+  let volume = width * height * depth;
+  
+  arr =[];
 
+  arr.push(surfaceArea);
+  arr.push(volume);
+
+  return arr;
 }
