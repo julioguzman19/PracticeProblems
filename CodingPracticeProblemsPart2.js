@@ -166,6 +166,22 @@ function getSize(width,height,depth){
   return arr;
   }
 
-  function enough(cap, on, wait) {
-    // your code here
+  //Bus driver needing to know if he can fit passengers return number he CANT take
+  //cap: # of people the bus can hold excluding the driver.
+  //on: # of people on the bus.
+  //wait: # of people waiting 
+  //ex:enough(10, 5, 5), 0); enough(100, 60, 50), 10);
+  
+  /* document.getElementById("javaScript").innerHTML = enoughBusRoom(100,60,50); */
+  function enoughBusRoom(cap, on, wait) {
+    let onAndWait = on+wait;
+    
+    if(cap === onAndWait || cap >= onAndWait){
+      return 0;
+    }
+
+    if(cap <= onAndWait){
+      return Math.abs(cap - onAndWait);
+    }
+
   }
