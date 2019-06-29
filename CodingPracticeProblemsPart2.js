@@ -186,7 +186,30 @@ function getSize(width,height,depth){
 
   }
 
+  //Fail!
   //Return string with reversed words
+  document.getElementById("javaScript").innerHTML =reverseWords("Hello World!")
   function reverseWords(str){
+    let reversedArr =[];
+    let tempArr = [];
+    let tempStr = "";
+   
+    for(let i=0; i<str.length; i++){
+      
+      if(str.charAt(i) !== " "){
+        tempStr = tempStr+str.charAt(i);
+      }
+      if(str.charAt(i) === " " || i === str.length -1){
+        tempArr.push(tempStr);
+        tempStr = "";
+        console.log(i)
+      }
+    }
+
+    for(let i=tempArr.length; i>=0 ; i--){
+      reversedArr.push(tempArr[i]);
+    }
+
+    return reversedArr.length;
 
   }
