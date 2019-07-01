@@ -187,9 +187,23 @@ function getSize(width,height,depth){
   }
 
   //Find missing term in arithmetic progressions
+  //Ex 1,3,4 >>> 2
+  document.getElementById("javaScript").innerHTML = findMissing([1,3,4]);
   function findMissing(list){
 
+  let arr = [];
+  let len = list.length
+  
+  //Puttings number differences in array
+  for(let i=len-1 ; i>0; i--){
+    arr.unshift(list[i] - (list[i -1])) //adding difference to end of array with unshift as push pusshes to ends of array
+
   }
+  arr.unshift(list[0] - 0)
+
+
+  return (arr);
+}
 
 
   //Fail!
