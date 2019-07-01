@@ -185,7 +185,7 @@ function getSize(width,height,depth){
     }
 
   }
-
+  //FAIL
   //Find missing term in arithmetic progressions
   //Ex 1,3,4 >>> 2
   document.getElementById("javaScript").innerHTML = findMissing([1,3,4]);
@@ -201,7 +201,15 @@ function getSize(width,height,depth){
   }
   arr.unshift(list[0] - 0)
 
+  let missingPosition = 0;
+  for(let i = 0; i<arr.length; i++){
 
+    for(let k = 0l i<arr.length;i++){
+      if(arr[i] === arr[k]){
+        missingPosition = 0;
+      }
+    }
+  }
   return (arr);
 }
 
