@@ -186,9 +186,15 @@ function getSize(width,height,depth){
 
   }
 
+  //Find missing term in arithmetic progressions
+  function findMissing(list){
+
+  }
+
+
   //Fail!
   //Return string with reversed words
-  document.getElementById("javaScript").innerHTML =reverseWords("Hello World!")
+  /* document.getElementById("javaScript").innerHTML =reverseWords("Hello World!") */
   function reverseWords(str){
     let reversedArr =[];
     let tempArr = [];
