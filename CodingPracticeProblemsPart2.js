@@ -188,7 +188,7 @@ function getSize(width,height,depth){
   //FAIL
   //Find missing term in arithmetic progressions
   //Ex 1,3,4 >>> 2
-  document.getElementById("javaScript").innerHTML = findMissing([1,3,4]);
+  /* document.getElementById("javaScript").innerHTML = findMissing([1,3,4]); */
   function findMissing(list){
 
   let arr = [];
@@ -283,7 +283,7 @@ function getSize(width,height,depth){
   }
   //Return True if your score higher than class average 
   //Class average will have to be calculated from array
-   document.getElementById("javaScript").innerHTML =betterThanClassAverage([1,3,5],1);
+   /* document.getElementById("javaScript").innerHTML =betterThanClassAverage([1,3,5],1); */
 
    function betterThanClassAverage(classPoints,yourPoints){
 
@@ -313,7 +313,19 @@ function getSize(width,height,depth){
 
    function disariumNumber(n){
 
-    let sum = 0;
-    
+    let strNum = ('' +n); //converting number to string
+    let sum =0;
 
+     for(let i =0; i<strNum.length; i++){
+       sum = sum + Math.pow(strNum.charAt(i),(i+1)); //sum = sum + first digit position zero to the position +1 power
+    } 
+
+    if(n ===sum){
+      return "Disarium !!";
+    }
+
+    if(n !== sum){
+      return "Not !!";
+    }
+   
    }
