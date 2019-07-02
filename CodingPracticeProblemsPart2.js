@@ -269,7 +269,7 @@ function getSize(width,height,depth){
   }
 
   //Conver a string to a number
-  document.getElementById("javaScript").innerHTML =stringToNumber("123")
+  /* document.getElementById("javaScript").innerHTML =stringToNumber("123") */
   function stringToNumber(str){
     let number = "";
 
@@ -281,3 +281,10 @@ function getSize(width,height,depth){
 
     return number;  
   }
+  //Return True if your score higher than class average 
+  //Class average will have to be calculated from array
+   document.getElementById("javaScript").innerHTML =betterThanClassAverage([1,3,5],9);
+
+   function betterThanClassAverage(classPoint,yourPoints{
+
+   }
