@@ -283,8 +283,23 @@ function getSize(width,height,depth){
   }
   //Return True if your score higher than class average 
   //Class average will have to be calculated from array
-   document.getElementById("javaScript").innerHTML =betterThanClassAverage([1,3,5],9);
+   document.getElementById("javaScript").innerHTML =betterThanClassAverage([1,3,5],1);
 
-   function betterThanClassAverage(classPoint,yourPoints{
+   function betterThanClassAverage(classPoints,yourPoints){
 
+    let average ="";
+    let sum = 0;
+
+    for(let i=0; i<classPoints.length ;i++){
+      sum = sum + classPoints[i];
+    }
+    average = sum / (classPoints.length +1); //getting average but adding 1 as lengh starts at zero
+
+    if(average > yourPoints){
+      return false;
+    }
+
+    if(average < yourPoints){
+      return true;
+    }
    }
