@@ -204,13 +204,39 @@ function getSize(width,height,depth){
   let missingPosition = 0;
   for(let i = 0; i<arr.length; i++){
 
-    for(let k = 0l i<arr.length;i++){
-      if(arr[i] === arr[k]){
+      if(i===0){
+        if(arr[0] !== arr[1] && arr[0] !==arr[2])
         missingPosition = 0;
+        
+      }
+      if(i==arr.length-1){
+        if(arr[arr.length-1] !== arr[arr.length-2] && arr[arr.length-1] !==arr[arr.length-3]){
+          missingPosition = i;
+          console.log(i)
+        }
+      }
+      if(i!==0 && i!==arr.length-1){
+        if(arr[i] !== arr[i-1] && arr[i] !== arr[i+1]){
+          missingPosition = i; 
+        }
       }
     }
-  }
-  return (arr);
+
+    if(missingPosition === 0){
+      return (list[1] - arr[1]);
+    }
+
+    if(missingPosition === arr.length-1){
+      return (list[list.length-2] - arr[0]);
+    }
+
+    if(missingPosition !== 0 && missingPosition !==arr.length-1){
+      console.log(arr[0])
+      return (list[missingPosition+1] - arr[0]);
+    }
+
+  
+
 }
 
 
@@ -239,5 +265,11 @@ function getSize(width,height,depth){
     }
 
     return reversedArr.length;
+
+  }
+
+  //Conver a string to a number
+  
+  function stringToNumber(str){
 
   }
