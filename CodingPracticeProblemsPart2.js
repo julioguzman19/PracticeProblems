@@ -304,3 +304,16 @@ function getSize(width,height,depth){
       return true;
     }
    }
+
+   //Return true if disarium number else fals
+   //Disarium number is the number that The sum of its digits powered with their respective positions is equal to the number itself.
+   //8^1 + 9^2 = 89 , thus output is "Disarium !!"
+
+   document.getElementById("javaScript").innerHTML = disariumNumber(89);
+
+   function disariumNumber(n){
+
+    let sum = 0;
+    
+
+   }
