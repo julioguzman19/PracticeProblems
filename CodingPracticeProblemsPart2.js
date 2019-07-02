@@ -293,6 +293,7 @@ function getSize(width,height,depth){
     for(let i=0; i<classPoints.length ;i++){
       sum = sum + classPoints[i];
     }
+    sum = sum + yourPoints;
     average = sum / (classPoints.length +1); //getting average but adding 1 as lengh starts at zero
 
     if(average > yourPoints){
