@@ -269,7 +269,13 @@ function getSize(width,height,depth){
   }
 
   //Conver a string to a number
-  
+  document.getElementById("javaScript").innerHTML =stringToNumber("123")
   function stringToNumber(str){
+    let number = 0;
 
+    for(let i =0 ; i<str.length; i++){
+      number = number +str.charAt(i);
+    }
+    number = number.slice(0)
+    return number;  
   }
