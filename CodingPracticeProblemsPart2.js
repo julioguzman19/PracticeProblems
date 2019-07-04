@@ -330,8 +330,12 @@ function getSize(width,height,depth){
    
    }
 
+   //Look at dariumNumber just know how to convert number to string and vice versa
    document.getElementById("javaScript").innerHTML = convertNumberToString(89);
 
    function convertNumberToString(n){
-     
+    console.log(typeof(n));
+    n = (''+n); //converting to string
+
+    console.log(typeof(n));
    }
