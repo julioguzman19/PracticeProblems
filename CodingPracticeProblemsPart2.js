@@ -344,5 +344,8 @@ function getSize(width,height,depth){
    document.getElementById("javaScript").innerHTML = convertStringToNumber('89');
 
    function convertStringToNumber(n){
-    
+    console.log(typeof(n));
+
+    n = parseInt(n,10); //if it was a decimal number use parseFloat(n)  10 is not required
+    console.log(typeof(n));
    }
