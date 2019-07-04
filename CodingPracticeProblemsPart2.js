@@ -331,11 +331,18 @@ function getSize(width,height,depth){
    }
 
    //Look at dariumNumber just know how to convert number to string and vice versa
-   document.getElementById("javaScript").innerHTML = convertNumberToString(89);
+   /* document.getElementById("javaScript").innerHTML = convertNumberToString(89); */
 
    function convertNumberToString(n){
     console.log(typeof(n));
     n = (''+n); //converting to string
 
     console.log(typeof(n));
+   }
+
+   //String to number
+   document.getElementById("javaScript").innerHTML = convertStringToNumber('89');
+
+   function convertStringToNumber(n){
+    
    }
