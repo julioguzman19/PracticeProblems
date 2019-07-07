@@ -357,12 +357,31 @@ function getSize(width,height,depth){
    }
 
    //first non repeating letter
-   //stress >> t  moonmen >> e
+   //stress >> t  moonmen >> e  moonmEn >> E
 
-   document.getElementById("javaScript").innerHTML = firstNonRepeatingLetter("stress");
+   document.getElementById("javaScript").innerHTML = firstNonRepeatingLetter("moonmEn");
+ 
 
    function firstNonRepeatingLetter(str){
+    let answer = "";
+
      for(let i=0; i<str.length; i++){
-       console.log(i);
+
+       for(let k=0; k<str.length; k++){
+        //lowercase to capture capital letters
+        if(str.charAt(i).toLowerCase()===str.charAt(k).toLowerCase() && i!==k){
+          answer = "true";
+          k = str.length
+        }
+        else{
+          answer = "false";
+        }
+
+       }
+       if(answer === "false"){
+         return str.charAt(i);
+       }
+       
      }
+     return "";
    }
