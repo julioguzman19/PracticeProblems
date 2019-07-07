@@ -355,3 +355,14 @@ function getSize(width,height,depth){
    function numberToCharacter(arr){
      
    }
+
+   //first non repeating letter
+   //stress >> t  moonmen >> e
+
+   document.getElementById("javaScript").innerHTML = firstNonRepeatingLetter("stress");
+
+   function firstNonRepeatingLetter(str){
+     for(let i=0; i<str.length; i++){
+       console.log(i);
+     }
+   }
