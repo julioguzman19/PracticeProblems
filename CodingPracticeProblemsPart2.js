@@ -386,7 +386,7 @@ function getSize(width,height,depth){
    }
 
    //FAIL in terms of formula and operators need to practice and know more
-   
+
    //determine the number of bits required to convert integer A to integer B (where A and B >= 0)
    //example below you can change 31 to 14 by flipping the 4th and 0th bit
    // thus 31 and 14 should return 2
@@ -406,6 +406,10 @@ function getSize(width,height,depth){
     let bitsRequired = 0;
     for (var i = 0; i < 31; i++) 
       bitsRequired += (a & (1 << i)) ^ ( b & (1 << i)) ? 1 : 0;
+      //refer to above developer link for more on operators & and <<
+      //? operator used as conditional. if true return value 1 if false return value 2
+      //? Syntax: let result = condition ? value1 : value2;
+      //ex: let allowedToDrink = (age>=21) ? true:false;
 
     return bitsRequired;
    }
