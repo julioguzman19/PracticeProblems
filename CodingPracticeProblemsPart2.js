@@ -400,16 +400,18 @@ function getSize(width,height,depth){
 
    //https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Bitwise_Operators
 
-   /* document.getElementById("javaScript").innerHTML = bitsRequiredIntegerConversion (14,31); */ //returns 2
+    document.getElementById("javaScript").innerHTML = bitsRequiredIntegerConversion (14,31);  //returns 2
 
    function bitsRequiredIntegerConversion (a,b){
     let bitsRequired = 0;
-    for (var i = 0; i < 31; i++) 
+    console.log(bitsRequired)
+    for (var i = 0; i < 31; i++){
       bitsRequired += (a & (1 << i)) ^ ( b & (1 << i)) ? 1 : 0;
       //refer to above developer link for more on operators & and <<
       //? operator used as conditional. if true return value 1 if false return value 2
       //? Syntax: let result = condition ? value1 : value2;
       //ex: let allowedToDrink = (age>=21) ? true:false;
-
+      console.log(i+ " "+ bitsRequired)
+    }
     return bitsRequired;
    }
