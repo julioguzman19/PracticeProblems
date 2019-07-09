@@ -385,6 +385,8 @@ function getSize(width,height,depth){
      return "";
    }
 
+   //FAIL in terms of formula and operators need to practice and know more
+   
    //determine the number of bits required to convert integer A to integer B (where A and B >= 0)
    //example below you can change 31 to 14 by flipping the 4th and 0th bit
    // thus 31 and 14 should return 2
@@ -392,6 +394,18 @@ function getSize(width,height,depth){
     14  0 0 0 0 1 1 1 0
     ---  ---------------
    bit  7 6 5 4 3 2 1 0 */
-   function bitsRequiredIntegerConversion{
+   
+   //A positive integer n has b bits when 2^(b-1) ≤ n ≤ 2^(b) – 1. 
+   //For eaxmple: 29 has 5 bits because 16 ≤ 29 ≤ 31, or 2^(4) ≤ 29 ≤ 2^(5) – 1
 
+   //https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Bitwise_Operators
+
+   /* document.getElementById("javaScript").innerHTML = bitsRequiredIntegerConversion (14,31); */ //returns 2
+
+   function bitsRequiredIntegerConversion (a,b){
+    let bitsRequired = 0;
+    for (var i = 0; i < 31; i++) 
+      bitsRequired += (a & (1 << i)) ^ ( b & (1 << i)) ? 1 : 0;
+
+    return bitsRequired;
    }
