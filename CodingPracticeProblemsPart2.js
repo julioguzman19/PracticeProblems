@@ -359,9 +359,8 @@ function getSize(width,height,depth){
    //first non repeating letter
    //stress >> t  moonmen >> e  moonmEn >> E
 
-   document.getElementById("javaScript").innerHTML = firstNonRepeatingLetter("moonmEn");
+   /* document.getElementById("javaScript").innerHTML = firstNonRepeatingLetter("moonmEn"); */
  
-
    function firstNonRepeatingLetter(str){
     let answer = "";
 
@@ -384,4 +383,15 @@ function getSize(width,height,depth){
        
      }
      return "";
+   }
+
+   //determine the number of bits required to convert integer A to integer B (where A and B >= 0)
+   //example below you can change 31 to 14 by flipping the 4th and 0th bit
+   // thus 31 and 14 should return 2
+/*  31  0 0 0 1 1 1 1 1
+    14  0 0 0 0 1 1 1 0
+    ---  ---------------
+   bit  7 6 5 4 3 2 1 0 */
+   function bitsRequiredIntegerConversion{
+
    }
