@@ -419,9 +419,13 @@ function getSize(width,height,depth){
    //Get the average for same positions in arrays
    //ex: [1,3,5] [2,2,2] >>> [1.5,2.5,3.5]
 
-   function avgArray(arr){
-     numberArrays = 0;
-     arrayLen = 0;
+   document.getElementById("javaScript").innerHTML =avgArray([[1,3,5],[2,2,2]])
 
-    
+   function avgArray(arr){
+    /* console.log(arr[0][1]) */ //returns second element in first array
+    let ans = 0;
+    for(let key in arr){
+     ans += arr[key];
+    }
+    console.log(ans);
    }
