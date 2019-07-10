@@ -400,7 +400,7 @@ function getSize(width,height,depth){
 
    //https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Bitwise_Operators
 
-    document.getElementById("javaScript").innerHTML = bitsRequiredIntegerConversion (14,31);  //returns 2
+    /* document.getElementById("javaScript").innerHTML = bitsRequiredIntegerConversion (14,31); */  //returns 2
 
    function bitsRequiredIntegerConversion (a,b){
     let bitsRequired = 0;
@@ -414,4 +414,14 @@ function getSize(width,height,depth){
       console.log(i+ " "+ bitsRequired)
     }
     return bitsRequired;
+   }
+
+   //Get the average for same positions in arrays
+   //ex: [1,3,5] [2,2,2] >>> [1.5,2.5,3.5]
+
+   function avgArray(arr){
+     numberArrays = 0;
+     arrayLen = 0;
+
+    
    }
