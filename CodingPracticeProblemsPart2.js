@@ -419,18 +419,24 @@ function getSize(width,height,depth){
    //Get the average for same positions in arrays
    //ex: [1,3,5] [2,2,2] >>> [1.5,2.5,3.5]
 
-   document.getElementById("javaScript").innerHTML =avgArray([[1,3,5],[2,2,2]])
+   document.getElementById("javaScript").innerHTML =avgArray([[1],[2]])
 
    function avgArray(arr){
     /* console.log(arr[0][1]) */ //returns second element in first array
-    let ans = 0;
-   /*  for(let key in arr){
-     ans += arr[key];
-    } */
+    let answer = [];
+ 
+    //arr[0].length will get length of array
+    
+    //arr.length gives me 2 arrays
 
-    for(let i =0; i<arr.length;i++){
-      
-    }
-    console.log(arr.length)
+     for(let i =0; i<arr.length;i++){
+        
+        for(let k=0; k<arr[0].length ; k++){
+          answer[k] = parseFloat(answer) + parseFloat(arr[i][k]);
+          console.log(answer)
+        }
+        
+    } 
+    console.log(answer)
     /* console.log(arr[0][0]); */
    }
