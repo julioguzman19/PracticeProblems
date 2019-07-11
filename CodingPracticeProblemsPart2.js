@@ -424,8 +424,13 @@ function getSize(width,height,depth){
    function avgArray(arr){
     /* console.log(arr[0][1]) */ //returns second element in first array
     let ans = 0;
-    for(let key in arr){
+   /*  for(let key in arr){
      ans += arr[key];
+    } */
+
+    for(let i =0; i<arr.length;i++){
+      
     }
-    console.log(ans);
+    console.log(arr.length)
+    /* console.log(arr[0][0]); */
    }
