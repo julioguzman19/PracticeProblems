@@ -416,27 +416,45 @@ function getSize(width,height,depth){
     return bitsRequired;
    }
 
+   //Remove dupes from array
+   
+   document.getElementById("javaScript").innerHTML = removeDupesInArray([0,1,2,2,3])
+
+   function removeDupesInArray(arr){
+
+    ans = [];
+
+    for(let i =0; i < arr.lengh; i++){
+      for(let k=0; k<arr.lengh; k++){
+        if(arr[i] !==arr[k]){
+
+        }
+      }
+    }
+   }
+
+     //FAIL!!!!!
    //Get the average for same positions in arrays
    //ex: [1,3,5] [2,2,2] >>> [1.5,2.5,3.5]
 
-   document.getElementById("javaScript").innerHTML =avgArray([[1],[2]])
+   /* document.getElementById("javaScript").innerHTML =avgArray([[1],[2]])
+ */
+function avgArray(arr){
+  /* console.log(arr[0][1]) */ //returns second element in first array
+  let answer = [];
 
-   function avgArray(arr){
-    /* console.log(arr[0][1]) */ //returns second element in first array
-    let answer = [];
- 
-    //arr[0].length will get length of array
-    
-    //arr.length gives me 2 arrays
+  //arr[0].length will get length of array
+  
+  //arr.length gives me 2 arrays
 
-     for(let i =0; i<arr.length;i++){
-        
-        for(let k=0; k<arr[0].length ; k++){
-          answer[k] = parseFloat(answer) + parseFloat(arr[i][k]);
-          console.log(answer)
-        }
-        
-    } 
-    console.log(answer)
-    /* console.log(arr[0][0]); */
-   }
+   for(let i =0; i<arr.length;i++){
+      
+      for(let k=0; k<arr[0].length ; k++){
+        answer[k] = parseFloat(answer) + parseFloat(arr[i][k]);
+        console.log(answer)
+      }
+      
+  } 
+  console.log(answer)
+  /* console.log(arr[0][0]); */
+ }
