@@ -417,7 +417,7 @@ function getSize(width,height,depth){
    }
 
    //Remove dupes from array
-   
+
    document.getElementById("javaScript").innerHTML = removeDupesInArray([0,1,2,2,3])
 
    function removeDupesInArray(arr){
@@ -426,9 +426,7 @@ function getSize(width,height,depth){
 
     for(let i =0; i < arr.lengh; i++){
       for(let k=0; k<arr.lengh; k++){
-        if(arr[i] !==arr[k]){
-
-        }
+        if(ans[k]!==)
       }
     }
    }
