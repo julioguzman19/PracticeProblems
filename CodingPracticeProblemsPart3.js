@@ -12,6 +12,7 @@ function adjacentElementsProduct(array) {
 
 //Note: In Haskell, we use No, Almost and Yes instead of 0, 1 and 2.
 //Interesting numbers are 3-or-more digit numbers that meet one or more of the following criteria:
+
 /* 
 -Any digit followed by all zeros: 100, 90000
 -Every digit is the same number: 1111
@@ -19,8 +20,38 @@ function adjacentElementsProduct(array) {
 -The digits are sequential, decrementing‡: 4321
 -The digits are a palindrome: 1221 or 73837
 -The digits match one of the values in the awesomePhrases array 
+
+returns:
+// "boring" numbers
+isInteresting(3, [1337, 256]);    // 0
+isInteresting(3236, [1337, 256]); // 0
+
+// progress as we near an "interesting" number
+isInteresting(11207, []); // 0
+isInteresting(11208, []); // 0
+isInteresting(11209, []); // 1
+isInteresting(11210, []); // 1
+isInteresting(11211, []); // 2
+
+// nearing a provided "awesome phrase"
+isInteresting(1335, [1337, 256]); // 1
+isInteresting(1336, [1337, 256]); // 1
+isInteresting(1337, [1337, 256]); // 2
 */
 
+/*Pseudo Code
+1) Check # of digits
+- if less than 3 return 0
+2) Check if one of the criteria
+- leadingZeros: check first digit greater than zero then rest of digits zeros
+- same numbers: user first digit to compare every other digit
+- sequential incrementing: check if current digit is less than next digit by 1 but after 9 zero comes in
+- sequential decrementing: check if current digit is more than next digit by 1
+- palindrome: if even # of digits split in half and compare  if odd # of digits remove middle digit and the split in half and compare
+- digits matches one of the values in awesomePhrases?
+
+
+*/
 document.getElementById("javaScript").innerHTML = isInteresting(3, [1337, 256]);
 
 function isInteresting(number, awesomePhrases) {
