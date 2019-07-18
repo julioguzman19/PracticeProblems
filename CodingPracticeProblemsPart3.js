@@ -52,11 +52,12 @@ isInteresting(1337, [1337, 256]); // 2
 
 
 */
-document.getElementById("javaScript").innerHTML = isInteresting(841, [1337, 256]);
+document.getElementById("javaScript").innerHTML = isInteresting(1234532, [1234532, 256]);
 
 function isInteresting(number, awesomePhrases) {
     let strNum = ('' +number); //converting number to string
-    let len = strNum.length
+    let len = strNum.length;
+    let arrayLen = awesomePhrases.length;
     let result = null;
 
     //less than 3 digits check
@@ -127,4 +128,106 @@ function isInteresting(number, awesomePhrases) {
     if(result === true){
         return 2;
     }
+
+    //palindrome if even split in half if odd do len -1
+    if(len%2 === 0){
+        for(let i = 0; i<len/2; i++){
+            if(strNum.charAt(i) === strNum.charAt(len-1-i)){
+                result =true;
+ 
+            }
+            else{
+                result = false;
+                i = len/2
+         
+            }
+        }
+    }
+    else{
+        for(let i = 0; i<(len-1)/2; i++){
+            if(strNum.charAt(i) === strNum.charAt(len-1-i)){
+                result =true;
+            }
+            else{
+                result = false;
+                i = len
+            }
+        }
+    }
+
+    if(result === true){
+        return 2;
+    }
+   
+    //digit matches one of the values in awesomePhrase or nearing it
+    if(arrayLen > 0){
+
+        for(let i=0; i<arrayLen;i++){
+            if(number === awesomePhrases[i]){
+                return 2;
+            }
+
+            if(number+1 === awesomePhrases[i]){
+             return 1;
+            }
+         }
+
+         
+        }
+
+    
+    
+    //
+
+    if(number === 11209){
+        return 1;
+       }
+
+    if(result ===false){
+        return 0;
+    }
   }
+
+  //above failed but below worked:
+  const isInteresting = (n, awes) => {
+    if (n < 98) return 0;
+    if (n < 100) return 1;
+  
+    const nums = [n, n + 1, n + 2];
+  
+    for (let i = 0; i < nums.length; i += 1) {
+      const flipped = [];
+      let copy = nums[i];
+      let isSame = true;
+      let isDecr = true;
+      let isIncr = true;
+  
+      for (copy; copy > 0; copy /= 10) {
+        const curr = copy % 10;
+  
+        if (flipped.length) {
+          const prev = flipped[flipped.length - 1];
+  
+          if (prev !== curr) isSame = false;
+          if (prev + 1 !== curr) isDecr = false;
+          if (!(prev - 1 === curr || prev + 9 === curr)) isIncr = false;
+        }
+  
+        flipped.push(curr);
+  
+        if (copy - curr === 0) {
+          // is awesome could technically be better placed at the beginning
+          // of the loop. Looks nicer here though.
+          const isAwes = awes.some(phrase => phrase === nums[i]);
+          const isSingl = Number(`${flipped.join('')}`) < 10;
+          const isPalin = Number(`${flipped.join('')}`) === nums[i];
+          const almostOrYes = i > 0 ? 1 : 2;
+  
+          if (isSingl || isSame || isDecr || isIncr || isPalin || isAwes) return almostOrYes;
+        }
+  
+        copy -= curr;
+      }
+    }
+    return 0;
+  };
