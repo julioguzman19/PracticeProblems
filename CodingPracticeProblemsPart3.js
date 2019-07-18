@@ -52,8 +52,79 @@ isInteresting(1337, [1337, 256]); // 2
 
 
 */
-document.getElementById("javaScript").innerHTML = isInteresting(3, [1337, 256]);
+document.getElementById("javaScript").innerHTML = isInteresting(841, [1337, 256]);
 
 function isInteresting(number, awesomePhrases) {
-   
+    let strNum = ('' +number); //converting number to string
+    let len = strNum.length
+    let result = null;
+
+    //less than 3 digits check
+    if(len < 3){
+        return 0;
+    }
+
+    //leading zeroes check
+    for(let i = 1; i<len; i++){
+        if(strNum.charAt(i) === '0'){
+            result = true;
+        }
+        else{
+            result = false;
+            i = len;
+        }
+    }
+    
+    if(result === true){
+        return 2;
+    }
+
+    //same digits check
+    for(let i=1;i<len;i++){
+        if(strNum.charAt(0) ===strNum.charAt(i)){
+            result = true;
+        }
+        else{
+            result = false;
+            i =len;
+        }
+    }
+    
+    if(result === true){
+        return 2;
+    }
+    
+    //sequential incrementing check '0' should come after 9
+    for(let i=0;i<len-1;i++){
+        if(strNum.charAt(i) === '0'){
+            strNum.charAt(i) = '10';
+        }
+        if(parseInt(strNum.charAt(i)) < parseInt(strNum.charAt(i+1))){
+            result = true;
+        }
+        else{
+            result = false;
+            i =len;
+        }
+    }
+    
+    if(result === true){
+        return 2;
+    }
+
+    //sequential decrementing 
+    for(let i=0;i<len-1;i++){
+    
+        if(parseInt(strNum.charAt(i)) > parseInt(strNum.charAt(i+1))){
+            result = true;
+        }
+        else{
+            result = false;
+            i =len;
+        }
+    }
+    
+    if(result === true){
+        return 2;
+    }
   }
