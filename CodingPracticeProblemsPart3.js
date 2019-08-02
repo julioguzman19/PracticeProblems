@@ -52,7 +52,7 @@ isInteresting(1337, [1337, 256]); // 2
 
 
 */
-document.getElementById("javaScript").innerHTML = isInteresting(1234532, [1234532, 256]);
+/* document.getElementById("javaScript").innerHTML = isInteresting(1234532, [1234532, 256]); */
 
 function isInteresting(number, awesomePhrases) {
     let strNum = ('' +number); //converting number to string
@@ -189,7 +189,7 @@ function isInteresting(number, awesomePhrases) {
   }
 
   //above failed but below worked:
-  const isInteresting = (n, awes) => {
+  /* const isInteresting = (n, awes) => {
     if (n < 98) return 0;
     if (n < 100) return 1;
   
@@ -230,4 +230,30 @@ function isInteresting(number, awesomePhrases) {
       }
     }
     return 0;
-  };
+  }; */
+
+
+/*
+accum("abcd") -> "A-Bb-Ccc-Dddd"
+accum("RqaEzty") -> "R-Qq-Aaa-Eeee-Zzzzz-Tttttt-Yyyyyyy"
+accum("cwAt") -> "C-Ww-Aaa-Tttt"
+*/
+/* document.getElementById("javaScript").innerHTML = accumulate("abcd"); */
+
+function accumulate(str){
+    let result = "";
+    for(let i =0;i<=str.length;i++){
+        for(let j=0;j<=i+1;j++){
+            if(j===0){
+                result = result+ str.charAt(i).toUpperCase();
+            }
+            else{
+                result = result+ str.charAt(i);
+            }
+        }
+        if(i<str.length-1){
+        result = result+"-";
+        }
+    }
+    return result;
+}
