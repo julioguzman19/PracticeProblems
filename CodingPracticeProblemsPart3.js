@@ -259,7 +259,7 @@ function accumulate(str){
 }
 
 //like a sports fan wave 'hello' >>> ["Hello", "hEllo","heLlo","helLo","hellO"]
-document.getElementById("javaScript").innerHTML = wave("cat dog");
+/* document.getElementById("javaScript").innerHTML = wave("cat dog"); */
 
 function wave(str){
     result = [];
@@ -286,3 +286,6 @@ function wave(str){
 }
 
 
+function formatDuration(seconds){
+    
+}
