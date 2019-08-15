@@ -259,13 +259,30 @@ function accumulate(str){
 }
 
 //like a sports fan wave 'hello' >>> ["Hello", "hEllo","heLlo","helLo","hellO"]
-document.getElementById("javaScript").innerHTML = wave("hello");
+document.getElementById("javaScript").innerHTML = wave("cat dog");
 
 function wave(str){
     result = [];
+    let newStr = "";
 
-    
+    for(let i=0; i<str.length; i++){
 
+        if(str.charAt(i) !== " "){
+            for(let k=0;k<str.length;k++){
+                 
+                    if(i===k){
+                        newStr = newStr +str.charAt(k).toUpperCase();
+                    }
+                    else{
+                        newStr = newStr + str.charAt(k);
+                    }
+                
+            }
+            result.push(newStr);
+            newStr = "";
+        }   
+    }
+    return result;
 }
 
 
