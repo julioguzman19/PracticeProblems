@@ -257,3 +257,15 @@ function accumulate(str){
     }
     return result;
 }
+
+//like a sports fan wave 'hello' >>> ["Hello", "hEllo","heLlo","helLo","hellO"]
+document.getElementById("javaScript").innerHTML = wave("hello");
+
+function wave(str){
+    result = [];
+
+    
+
+}
+
+
