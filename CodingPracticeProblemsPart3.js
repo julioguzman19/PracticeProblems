@@ -290,75 +290,84 @@ function wave(str){
 //Test.assertEquals(formatDuration(1), "1 second");
 
 document.getElementById("javaScript").innerHTML = formatDuration(360980);
-function formatDuration(seconds){
+function formatDuration(seconds) {
 
-    let year = Math.floor(seconds/(3600*24*365));
-    let day = Math.floor(seconds/(3600*24));
-    let hour = Math.floor(seconds/3600);
-    let minute = Math.floor((seconds - hour*3600)/60) ;
-    let second = seconds%60;
+    if(seconds ===0){
+        return "now";
+    }
+
+    let year = Math.floor(seconds / (3600 * 24 * 365));
+    let day = Math.floor((seconds / 86400) % 365);
+    let hour = Math.floor((seconds / 3600) % 24);
+    let minute = Math.floor((seconds / 60) % 60);
+    let second = seconds % 60;
     result = "";
 
 
-    if(year === 1){
-        result = result + year +" " +"year";
-        if(day || hour || minute || second > 0){
+
+    if (year === 1) {
+        result = result + year + " " + "year";
+        if (day || hour || minute || second > 0) {
             result = result + "," + " ";
         }
     }
-    if(year > 1){
-        result = result + year +" " +"years";
-        if(day || hour || minute || second > 0){
-            result = result + ","+" ";
-        }
-    }
-
-    if(day === 1){
-        result = result + day +" " +"day";
-        if( hour || minute || second > 0){
+    if (year > 1) {
+        result = result + year + " " + "years";
+        if (day || hour || minute || second > 0) {
             result = result + "," + " ";
         }
     }
-    if(day > 1){
-        result = result + day +" " +"days";
-        if( hour || minute || second > 0){
-            result = result + ","+" ";
+
+    if (day === 1) {
+        result = result + day + " " + "day";
+        if (hour || minute || second > 0) {
+            result = result + "," + " ";
+        }
+    }
+    if (day > 1) {
+        result = result + day + " " + "days";
+        if (hour || minute || second > 0) {
+            result = result + "," + " ";
         }
     }
 
 
-        if(hour === 1){
-            result = result+hour +" " +"hour";
-            if(minute || second > 0){
-                result = result + "," + " ";
-            }
+    if (hour === 1) {
+        result = result + hour + " " + "hour";
+        if (minute || second > 0) {
+            result = result + "," + " ";
         }
-        if(hour > 1){
-            result = result+hour +" " +"hours";
-            if(minute || second > 0){
-                result = result + ","+" ";
-            }
-        }
+    }
+    if (hour > 1) {
+        result = result + hour + " " + "hours";
 
-        if(minute ===1){
-            result = result + minute +" " +"minute";
-            if(second > 0){
-                result = result + " and"+ " ";
-            }
+        if (minute && second > 0) {
+            result = result + "," + " ";
         }
-        if(minute >1){
-            result = result + minute +" " +"minutes";
-            if(second > 0){
-                result = result + " and"+ " ";
-            }
+        else (minute || second > 0){
+            result = result + " and" + " ";
         }
+    }
 
-        if(second ===1){
-            result = result + second +" " +"second";
+    if (minute === 1) {
+        result = result + minute + " " + "minute";
+        if (second > 0) {
+            result = result + " and" + " ";
         }
-        if(second >1){
-            result = result + second +" " +"seconds";
+    }
+    if (minute > 1) {
+        result = result + minute + " " + "minutes";
+        if (second > 0) {
+            result = result + " and" + " ";
         }
+    }
+
+    if (second === 1) {
+        result = result + second + " " + "second";
+    }
+    if (second > 1) {
+        result = result + second + " " + "seconds";
+    }
 
 
     return result;
