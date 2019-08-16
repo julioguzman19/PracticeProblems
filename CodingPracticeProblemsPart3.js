@@ -289,7 +289,7 @@ function wave(str){
 //Test.assertEquals(formatDuration(62), "1 minute and 2 seconds");
 //Test.assertEquals(formatDuration(1), "1 second");
 
-document.getElementById("javaScript").innerHTML = formatDuration(360980);
+/* document.getElementById("javaScript").innerHTML = formatDuration(360980); */
 function formatDuration(seconds) {
 
     if(seconds ===0){
