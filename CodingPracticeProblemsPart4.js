@@ -43,8 +43,40 @@ function flattenAndSort(array) {
     return result;
 }
 
- document.getElementById("javaScript").innerHTML = ; 
+//Test.assertEquals(stringTransformer('Example string'), 'STRING eXAMPLE');
+
+document.getElementById("javaScript").innerHTML = stringTransformer("Example string") ; 
 
 function stringTransformer(str) {
-    // Your code here
+    let result = "";
+    let tempStr = "";
+    let counter = true;
+
+    for(let i=0; i<str.length;i++){
+            if(str.charAt(i) === str.charAt(i).toUpperCase()){
+                tempStr = tempStr + str.charAt(i).toLowerCase();
+                
+            }
+            else if(str.charAt(i) === str.charAt(i).toLowerCase()){
+                tempStr = tempStr + str.charAt(i).toUpperCase();
+            }
+  
+  
+    if(str.charAt(i) === " " || i===str.length-1 ){
+        if(counter || i==str.lengh-1){
+            result = tempStr+result;
+            tempStr = "";
+            counter = false;
+        }
+        else{
+        result = tempStr +"_"+result;
+        tempStr = "";
+        }
+    }
+        
+    }   
+    return(result); 
 }
+
+//Expected: 'STRING eXAMPLE', instead got: 'STRING eXAMPLE '
+// "" > "word " > "word word "
