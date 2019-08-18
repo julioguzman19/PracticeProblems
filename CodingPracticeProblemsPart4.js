@@ -53,30 +53,37 @@ function stringTransformer(str) {
     let counter = true;
 
     for(let i=0; i<str.length;i++){
-            if(str.charAt(i) === str.charAt(i).toUpperCase()){
+            if(str.charAt(i) === str.charAt(i).toUpperCase()&& str.charAt(i)!==" "){
                 tempStr = tempStr + str.charAt(i).toLowerCase();
-                
+                console.log(str.charAt(i));
             }
-            else if(str.charAt(i) === str.charAt(i).toLowerCase()){
-                tempStr = tempStr + str.charAt(i).toUpperCase();
+            else if(str.charAt(i) === str.charAt(i).toLowerCase()&& str.charAt(i)!==" " ){
+                tempStr = tempStr + str.charAt(i).toUpperCase(); 
             }
+
   
   
     if(str.charAt(i) === " " || i===str.length-1 ){
-        if(counter || i==str.lengh-1){
+        
+
+        if(counter || i===str.lengh-1){
             result = tempStr+result;
             tempStr = "";
             counter = false;
+
         }
         else{
-        result = tempStr +"_"+result;
+        result = tempStr +" "+result;
         tempStr = "";
         }
+        
     }
         
     }   
+    if(str.charAt(0) === " "){
+    result = " " + result;
+    }
     return(result); 
 }
 
-//Expected: 'STRING eXAMPLE', instead got: 'STRING eXAMPLE '
-// "" > "word " > "word word "
+//can use split and join then loop through array
