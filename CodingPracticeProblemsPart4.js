@@ -45,7 +45,7 @@ function flattenAndSort(array) {
 
 //Test.assertEquals(stringTransformer('Example string'), 'STRING eXAMPLE');
 
-document.getElementById("javaScript").innerHTML = stringTransformer("Example string") ; 
+/* document.getElementById("javaScript").innerHTML = stringTransformer("Example string") ;  */
 
 function stringTransformer(str) {
     let result = "";
@@ -86,4 +86,15 @@ function stringTransformer(str) {
     return(result); 
 }
 
-//can use split and join then loop through array
+//shorter below with functions
+function stringTransformer(str) {
+    return str
+      .split(' ')
+      .reverse()
+      .join(' ')
+      .split('')
+      .map(v => v == v.toUpperCase() ?
+        v.toLowerCase() :
+        v.toUpperCase())
+      .join('');
+  }
