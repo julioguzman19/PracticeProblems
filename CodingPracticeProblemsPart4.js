@@ -108,13 +108,6 @@ Test.assertEquals(nameInStr('A live son', 'Allison'), false) */
 document.getElementById("javaScript").innerHTML = nameInStr('Across the rivers', 'chris');
 
 function nameInStr(str,name){
-    
-    for(let i=0;i<name.length;i++){
-        for(let k=0;k<str.length;k++){
-            if(name.charAt(i) === str.charAt(i)){
-                str.slice(k);
-                console.log(str);
-            }
-        }
-    }
+
+    console.log(str.includes(name));
 }
