@@ -114,9 +114,22 @@ function stringTransformer(str) {
   -For JavaScript, require has been disabled and most built-in prototypes have been frozen (prototype methods can be added to Array and Function)
   -All test cases will be valid */
 
-document.getElementById("javaScript").innerHTML = mysteryRange(s,n);
-function mysteryRange(s,n){
+document.getElementById("javaScript").innerHTML = mysteryRange('1568141291110137',15);
 
+function mysteryRange(s,n){
+    numInRange = [];
+
+    for(let i =0;i<s.length;i++){
+
+        if(parseInt(s.charAt(i)+s.charAt(i+1)) <= n){
+            numInRange.push(parseInt(s.charAt(i)+s.charAt(i+1)));
+            /* console.log("combined: "+ s.charAt(i)+s.charAt(i+1)) */
+        }
+        else if(parseInt(s.charAt(i)) <= n){
+            numInRange.push(parseInt(s.charAt(i)));
+            /* console.log("NOT combined: "+ s.charAt(i)); */
+        }
+    }
 }
 
 
