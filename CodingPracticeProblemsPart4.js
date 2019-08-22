@@ -119,6 +119,7 @@ document.getElementById("javaScript").innerHTML = mysteryRange('1568141291110137
 function mysteryRange(s,n){
     numInRange = [];
 
+    //getting numbers in range
     for(let i =0;i<s.length;i++){
 
         if(parseInt(s.charAt(i)+s.charAt(i+1)) <= n){
@@ -130,7 +131,25 @@ function mysteryRange(s,n){
             /* console.log("NOT combined: "+ s.charAt(i)); */
         }
     }
-}
+    
+    //finding top 10
+    let min = n;
+    while(numInRange.length<10){
+        for (let i =0; i<numInRange.length;i++){
+            if(numInRange[i] < min){
+            min = numInRange[i];
+            }
+        }
+        for (let i =0; i<numInRange.length;i++){
+            if(numInRange[i] === min){
+            numInRange.splice(i,1);
+            i = numInRange+1;
+            }
+            
+        }
+    }
+    return numInRange;
+}   
 
 
 /* Test.assertEquals(nameInStr('Across the rivers', 'chris'), true)
