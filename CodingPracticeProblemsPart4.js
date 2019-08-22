@@ -98,6 +98,27 @@ function stringTransformer(str) {
         v.toUpperCase())
       .join('');
   }
+ 
+ 
+ /*  let inputString = '1568141291110137';
+
+  mysteryRange(inputString,10) // [6,15]
+  
+  // The 10 numbers in this string are:
+  // 15 6 8 14 12 9 11 10 13 7
+  // Therefore the range of numbers is from 6 to 15
+  -The maximum size of a range will be 100 integers
+  -The starting number of a range will be: 0 < n < 100
+  -Full Test Suite: 21 fixed tests, 100 random tests
+  -Use Python 3+ for the Python translation
+  -For JavaScript, require has been disabled and most built-in prototypes have been frozen (prototype methods can be added to Array and Function)
+  -All test cases will be valid */
+
+document.getElementById("javaScript").innerHTML = mysteryRange(s,n);
+function mysteryRange(s,n){
+
+}
+
 
 /* Test.assertEquals(nameInStr('Across the rivers', 'chris'), true)
 Test.assertEquals(nameInStr('Next to a lake', 'chris'), false)
@@ -105,8 +126,8 @@ Test.assertEquals(nameInStr('Under a sea', 'chris'), false)
 Test.assertEquals(nameInStr('A crew that boards the ship', 'chris'), false)
 Test.assertEquals(nameInStr('A live son', 'Allison'), false) */
 
-document.getElementById("javaScript").innerHTML = nameInStr('Across the rivers', 'chris');
-
+/* document.getElementById("javaScript").innerHTML = nameInStr('Across the rivers', 'chris');
+ */
 function nameInStr(str,name){
 
     console.log(str.includes(name));
