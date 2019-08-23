@@ -118,6 +118,15 @@ document.getElementById("javaScript").innerHTML = mysteryRange('1568141291110137
 
 function mysteryRange(s,n){
     numInRange = [];
+    //checkdigits in 'n'
+    let tempN =n;
+    let counter = 0;
+
+    while(tempN >1){
+        tempN = tempN/10;
+        counter = counter+1;
+        console.log(counter);
+    }
 
     //getting numbers in range
     for(let i =0;i<s.length;i++){
