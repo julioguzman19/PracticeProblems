@@ -176,15 +176,25 @@ function nameInStr(str,name){
 
 //Calculator().evaluate("2 / 2 + 3 * 4 - 6") # => 7
 /*
-1) check operators
-2) left to right if operator / or * then do that math parseInt with i -2 and i+2 position number
-3) store current result in variable 
-4) in for loop newStr = currentResult 
+1) add them into array
+2) check operators
+3) left to right if operator / or * then do that math parseInt with i -1 and i+1 position number
+4) store current result in variable 
+5) using splice remove previous position, then previous position again as they will shift, then set previous position to current result
+6) repeat for + or - except this time we can just add and subtract
 
 */ 
 document.getElementById("javaScript").innerHTML = calculator("2 / 2 + 3 * 4 - 6")
 
 
 function calculator(str){
+  tempArray = [];
 
+  for(let i=0;i<str.length;i++){
+      if(str.charAt(i) !== " "){
+          tempArray.push(str.charAt(i));
+        console.log(tempArray);
+      }
+  }
+  
 }
