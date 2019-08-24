@@ -184,17 +184,58 @@ function nameInStr(str,name){
 6) repeat for + or - except this time we can just add and subtract
 
 */ 
-document.getElementById("javaScript").innerHTML = calculator("2 / 2 + 3 * 4 - 6")
+document.getElementById("javaScript").innerHTML = calculator("125")
 
 
 function calculator(str){
-  tempArray = [];
+  let tempArray = [];
+  let currentResult;
+  let noOperator = false;
 
   for(let i=0;i<str.length;i++){
       if(str.charAt(i) !== " "){
           tempArray.push(str.charAt(i));
-        console.log(tempArray);
       }
+      if(str.charAt(i) !== "*"||str.charAt(i) !== "/"||str.charAt(i) !== "+"||str.charAt(i) !== "-"||str.charAt(i)!==" "){
+        noOperator = true;
+    }
   }
+  if(noOperator){
+      return parseInt(str);
+  }
+
+   for(let i=0;i<tempArray.length;i++){
+      if(tempArray[i]==="/" ){
+        currentResult = parseInt(tempArray[i-1]) / parseInt(tempArray[i+1]);
+        tempArray[i+1] = currentResult;
+        tempArray.splice(i-1,2);//at position i-1 remove 2 items
+        i=0;
+      }
+      if(tempArray[i] === "*"){
+        currentResult = parseInt(tempArray[i-1]) * parseInt(tempArray[i+1]);
+        tempArray[i+1] = currentResult;
+        tempArray.splice(i-1,2);//at position i-1 remove 2 items
+        i=0;
+      }
+  } 
+
+  currentResult = 0;
+  for(let i=0;i<tempArray.length;i++){
+    if(tempArray[i]==="-" ){
+      currentResult = parseInt(tempArray[i-1]) - parseInt(tempArray[i+1]);
+      tempArray[i+1] = currentResult;
+      tempArray.splice(i-1,2);//at position i-1 remove 2 items
+      i=0;
+    }
+    if(tempArray[i] === "+"){
+      currentResult = parseInt(tempArray[i-1]) + parseInt(tempArray[i+1]);
+      tempArray[i+1] = currentResult;
+      tempArray.splice(i-1,2);//at position i-1 remove 2 items
+      i=0;
+    }
+} 
+
+
+return tempArray[0];
   
 }
