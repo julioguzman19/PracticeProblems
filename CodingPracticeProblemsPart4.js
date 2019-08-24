@@ -175,8 +175,14 @@ function nameInStr(str,name){
 }
 
 //Calculator().evaluate("2 / 2 + 3 * 4 - 6") # => 7
+/*
+1) check operators
+2) left to right if operator / or * then do that math parseInt with i -2 and i+2 position number
+3) store current result in variable 
+4) in for loop newStr = currentResult 
 
-document.getElementById("javaScript").innerHTML =
+*/ 
+document.getElementById("javaScript").innerHTML = calculator("2 / 2 + 3 * 4 - 6")
 
 
 function calculator(str){
