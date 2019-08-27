@@ -184,7 +184,7 @@ function nameInStr(str,name){
 6) repeat for + or - except this time we can just add and subtract
 
 */ 
-document.getElementById("javaScript").innerHTML = calculator("125")
+/* document.getElementById("javaScript").innerHTML = calculator("125") */
 
 
 function calculator(str){
@@ -196,7 +196,7 @@ function calculator(str){
       if(str.charAt(i) !== " "){
           tempArray.push(str.charAt(i));
       }
-      if(str.charAt(i) !== "*"||str.charAt(i) !== "/"||str.charAt(i) !== "+"||str.charAt(i) !== "-"||str.charAt(i)!==" "){
+      if(str.charAt(i) === "*"||str.charAt(i) === "/"||str.charAt(i) === "+"||str.charAt(i) === "-"||str.charAt(i)===" "){
         noOperator = true;
     }
   }
@@ -238,4 +238,14 @@ function calculator(str){
 
 return tempArray[0];
   
+}
+
+//Task Given an array/list [] of n integers , Separate The even numbers from the odds , or 
+//Test.assertSimilar(menFromBoys([7,3,14,17]), [14,17,7,3]);
+//Test.assertSimilar(menFromBoys([2,43,95,90,37]), [2,90,95,43,37]);
+
+document.getElementById("javaScript").innerHTML =
+
+function separateOdds(array){
+
 }
