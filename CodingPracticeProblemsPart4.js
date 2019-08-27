@@ -244,8 +244,15 @@ return tempArray[0];
 //Test.assertSimilar(menFromBoys([7,3,14,17]), [14,17,7,3]);
 //Test.assertSimilar(menFromBoys([2,43,95,90,37]), [2,90,95,43,37]);
 
-document.getElementById("javaScript").innerHTML =
+document.getElementById("javaScript").innerHTML = separateOdds([7,3,14,17]);
 
 function separateOdds(array){
+    let result = [];
 
+    for(let i =0;i<separateOdds.length;i++){
+        if(array[i]%2 === 0){
+            result.push(array[i]);
+        }
+    }
+    return result;
 }
