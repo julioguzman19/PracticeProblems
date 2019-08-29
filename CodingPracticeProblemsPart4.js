@@ -265,7 +265,17 @@ function separateOdds(arr){
     }
     return result;
 }
-document.getElementById("javaScript").innerHTML = isUppperCase("fdD");
+/* document.getElementById("javaScript").innerHTML = isUppperCase("fdD"); */
 String.prototype.isUpperCase = function() {
-    // your code here
+    let result = false;
+    for(let i=0;i<String.length;i++){
+        if(String.charAt(i) !== String.charAt(i).toUpperCase()){
+            result = false;
+            return result;
+        }
+        else{
+            result = true;
+        }
+    }
+    return result;
   }
