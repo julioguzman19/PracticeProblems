@@ -243,16 +243,29 @@ return tempArray[0];
 //Task Given an array/list [] of n integers , Separate The even numbers from the odds , or 
 //Test.assertSimilar(menFromBoys([7,3,14,17]), [14,17,7,3]);
 //Test.assertSimilar(menFromBoys([2,43,95,90,37]), [2,90,95,43,37]);
+/* 
+document.getElementById("javaScript").innerHTML = separateOdds([7,3,2,14,17]); */
 
-document.getElementById("javaScript").innerHTML = separateOdds([7,3,14,17]);
-
-function separateOdds(array){
+function separateOdds(arr){
     let result = [];
 
-    for(let i =0;i<separateOdds.length;i++){
-        if(array[i]%2 === 0){
-            result.push(array[i]);
+    for(let i=0;i<arr.length;i++){
+        if(arr[i]%2 === 0){
+        result.push(arr[i]);
+        }
+    }
+    for(let i=0;i<results.length;i++){
+        
+    }
+
+    for(let i=0;i<arr.length;i++){
+        if(arr[i]%2 !== 0){
+        result.push(arr[i]);
         }
     }
     return result;
 }
+document.getElementById("javaScript").innerHTML = isUppperCase("fdD");
+String.prototype.isUpperCase = function() {
+    // your code here
+  }
