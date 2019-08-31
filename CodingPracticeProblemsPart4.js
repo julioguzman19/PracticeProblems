@@ -283,12 +283,36 @@ String.prototype.isUpperCase = function() {
 
  /*  
   Test.assertSimilar(productArray([12,20]), [20,12]);
-  Test.assertSimilar(productArray([12,20]), [20,12]);
   Test.assertSimilar(productArray([3,27,4,2]), [216,24,162,324]);
   Test.assertSimilar(productArray([13,10,5,2,9]), [900,1170,2340,5850,1300]);
   Test.assertSimilar(productArray([16,17,4,3,5,2]), [2040,1920,8160,10880,6528,16320]); */
 
-  document.getElementById("javaScript").innerHTML = productArray([12,20])
+ // Given an array/list [] of integers , 
+  // Construct a product array Of same size Such That prod[i] is equal to The Product of all the elements of Arr[] except Arr[i].
+  //returns product of numbers excluding that number  in that position
+
+  document.getElementById("javaScript").innerHTML = productArray([12,20,2])
   function productArray(numbers){
-    //your code here
+    let resultArray =[];
+    let tempProduct = 1;
+
+    if(numbers.length===2){
+        resultArray[0] = numbers[1];
+        resultArray[1] = numbers[0];
+        return resultArray;
+    }
+
+    for(let i=0;i<numbers.length;i++){
+        for(let j=0;j<numbers.length;j++){
+            if(i!== j){
+                tempProduct = tempProduct * numbers[i];
+                console.log(tempProduct);
+            }
+        }
+        resultArray[i] = tempProduct;
+        tempProduct = 1;
+    }
+
+    return resultArray;
+
   }
