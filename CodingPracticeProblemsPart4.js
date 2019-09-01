@@ -291,7 +291,7 @@ String.prototype.isUpperCase = function() {
   // Construct a product array Of same size Such That prod[i] is equal to The Product of all the elements of Arr[] except Arr[i].
   //returns product of numbers excluding that number  in that position
 
-  document.getElementById("javaScript").innerHTML = productArray([12,20,2])
+  //document.getElementById("javaScript").innerHTML = productArray([12,20,2])
   function productArray(numbers){
     let resultArray =[];
     let tempProduct = 1;
@@ -305,8 +305,7 @@ String.prototype.isUpperCase = function() {
     for(let i=0;i<numbers.length;i++){
         for(let j=0;j<numbers.length;j++){
             if(i!== j){
-                tempProduct = tempProduct * numbers[i];
-                console.log(tempProduct);
+                tempProduct = tempProduct * numbers[j];
             }
         }
         resultArray[i] = tempProduct;
@@ -314,5 +313,4 @@ String.prototype.isUpperCase = function() {
     }
 
     return resultArray;
-
   }
