@@ -2,7 +2,7 @@
 //aabbbc >>> a2b3c1
 //aaabcc >>> a3b1c2
 
-document.getElementById("javaScript").innerHTML = encodingString("aabbbc");
+//document.getElementById("javaScript").innerHTML = encodingString("aabbbc");
 
 function encodingString(str){
     let result = "";
@@ -21,3 +21,50 @@ function encodingString(str){
     }
     return result;
 }
+
+//negation Value
+// !false = true
+// !!false = false
+/*
+negationValue("!", false); //=> true
+negationValue("!!!!!", true); //=> false
+negationValue("!!", []); //=> true
+*/
+
+//document.getElementById("javaScript").innerHTML = negationValue("!!",[]);
+
+function negationValue(string,value){
+
+    let result = true;
+    if(string.length%2 === 0){
+        if(value === true && typeof(value) === "boolean"){
+            result = true;
+        }
+        else if(value === false && typeof(value) === "boolean"){
+            result = false;
+        }
+        else{
+            result = true;
+        }
+    }
+    else{
+        if(value === true && typeof(value) === "boolean"){
+            result = false;
+        }
+        else if (value === false && typeof(value) === "boolean"){
+            result = true;
+        }
+        else{
+            result = false;
+        }
+    }
+    return result;
+}
+
+
+//recursiveFloorSequence
+
+document.getElementById("javaScript").innerHTML = f(2,3);
+let f = function(k, n){
+    
+  }

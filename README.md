@@ -1,2 +1,1 @@
-# PracticeProblems
-Practice problems
+# CodeWars and other practice problems
