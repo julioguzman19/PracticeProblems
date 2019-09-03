@@ -63,8 +63,16 @@ function negationValue(string,value){
 
 
 //recursiveFloorSequence
+//Test.assertEquals(f(2, 3), 6)
+//Test.assertEquals(f(100, 0), 1)
+//fk(n) = ∑ i = 0 n fk(floor(i / k)) where fk(0) = 1
 
-document.getElementById("javaScript").innerHTML = f(2,3);
 let f = function(k, n){
-    
+    let count = n;
+    let result = 0;
+    for(let i = 0;i<count;i++){
+        result = result + Math.floor(n/k);
+    }
+    return result;
   }
+  document.getElementById("javaScript").innerHTML = f(2,3);
