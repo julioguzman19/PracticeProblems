@@ -77,12 +77,22 @@ let f = function(k, n){
   }
 //  document.getElementById("javaScript").innerHTML = f(2,3);
 
-document.getElementById("javaScript").innerHTML = calc([1,1]);
+document.getElementById("javaScript").innerHTML = calc([4, 10, 2, 3, 1, 3, 1, 6, 9]);
 function calc(cards){
-    let result;
+    let result = 0;
 
     for(let i=0;i<cards.length;i++){
-        result = result + Math.pow(card[i],2+i);
+        if(cards[0] > cards[cards.length-1]){
+            
+            result = (Math.pow(2,i+1))*(cards[0]) + result;
+            console.log(result);
+            cards.shift();
+        }
+        else{
+            
+            result = (Math.pow(2,i+1)*cards[cards.length]-1)+result;
+            cards.pop();
+        }
     }
     return result;
 }
