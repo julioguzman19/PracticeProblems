@@ -79,5 +79,10 @@ let f = function(k, n){
 
 document.getElementById("javaScript").innerHTML = calc([1,1]);
 function calc(cards){
+    let result;
 
+    for(let i=0;i<cards.length;i++){
+        result = result + Math.pow(card[i],2+i);
+    }
+    return result;
 }
