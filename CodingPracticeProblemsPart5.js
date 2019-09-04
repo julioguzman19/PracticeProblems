@@ -75,4 +75,9 @@ let f = function(k, n){
     }
     return result;
   }
-  document.getElementById("javaScript").innerHTML = f(2,3);
+//  document.getElementById("javaScript").innerHTML = f(2,3);
+
+document.getElementById("javaScript").innerHTML = calc([1,1]);
+function calc(cards){
+
+}
