@@ -77,22 +77,27 @@ let f = function(k, n){
   }
 //  document.getElementById("javaScript").innerHTML = f(2,3);
 
-document.getElementById("javaScript").innerHTML = calc([4, 10, 2, 3, 1, 3, 1, 6, 9]);
+//document.getElementById("javaScript").innerHTML = calc([4, 10, 2, 3, 1, 3, 1, 6, 9]);
 function calc(cards){
-    
+    let result = 0;
     for(let i=0;i<cards.length;i++){
-        let result = 0;
+        
         if(cards[0] > cards[cards.length-1]){
             
-           result =result+ (Math.pow(2,i+1))*(cards[0]);
-            console.log(result);
+            result = result+ (Math.pow(2,i+1))*(cards[0]);
+            
             cards.shift();
         }
         else{
             
-            result = (Math.pow(2,i+1)*cards[cards.length]-1)+result;
+            result = result +(Math.pow(2,i+1))*(cards[cards.length-1]);
             cards.pop();
         }
     }
     return result;
+}
+
+document.getElementById("javaScript").innerHTML = josephusSurvivor(7,3);
+function josephusSurvivor(n,k){
+
 }
