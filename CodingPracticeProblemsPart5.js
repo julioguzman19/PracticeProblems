@@ -96,8 +96,51 @@ function calc(cards){
     }
     return result;
 }
-
+//Test.assertEquals(josephusSurvivor(7,3),4)
+//[1,2,3,4,5,6,7]
+/*
+[1,2,4,5,6,7] => 3 is counted out
+[1,2,4,5,7] => 6 is counted out
+[1,4,5,7] => 2 is counted out
+[1,4,5] => 7 is counted out
+[1,4] => 5 is counted out
+[4] => 1 counted out, 4 is the last element - the survivor!
+*/
 document.getElementById("javaScript").innerHTML = josephusSurvivor(7,3);
-function josephusSurvivor(n,k){
+function josephusSurvivor(n, k) {
+  let array = [];
+
+  for (let i = 0; i < n; i++) {
+    array.push(i + 1);
+  }
+
+  let currentPosition = 0;
+  let currentCount = 1;
+  let answer = false;
+  let test = 0;
+
+  while (answer === false) {
+
+        
+    if(currentPosition > array.length){
+        currentPosition = 0;
+    }
+    if (currentCount ===3) {
+      console.log("GTFO: "+array[currentPosition]);
+      array.splice(currentPosition, 1);
+      currentCount = 1;
+      console.log(array);
+    }
+
+    console.log("Current Position: "+currentPosition+ " "+ "Current Count: "+currentCount);
+    currentPosition +=1;
+    currentCount +=1;
+
+
+    if(test ===20){
+        answer =true;
+        }
+     test++;
+  } 
 
 }
