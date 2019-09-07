@@ -109,38 +109,26 @@ function calc(cards){
 document.getElementById("javaScript").innerHTML = josephusSurvivor(7,3);
 function josephusSurvivor(n, k) {
   let array = [];
-
+  let count = 0;
+  let answer = true;
+  
   for (let i = 0; i < n; i++) {
     array.push(i + 1);
   }
 
-  let currentPosition = 0;
-  let currentCount = 1;
-  let answer = false;
-  let test = 0;
-
-  while (answer === false) {
-
-        
-    if(currentPosition > array.length){
-        currentPosition = 0;
-    }
-    if (currentCount ===3) {
-      console.log("GTFO: "+array[currentPosition]);
-      array.splice(currentPosition, 1);
-      currentCount = 1;
-      console.log(array);
-    }
-
-    console.log("Current Position: "+currentPosition+ " "+ "Current Count: "+currentCount);
-    currentPosition +=1;
-    currentCount +=1;
-
-
-    if(test ===20){
-        answer =true;
+  while (answer) {
+    for(let i=0;i<array.length;i++){
+        count++
+        if(count===k){
+            array.splice(i,1);
+            count=0;
+            i--;
         }
-     test++;
+        
+    }
+    if(array.length ===1){
+        answer = false;
+    }
   } 
-
+  return array[0];
 }
