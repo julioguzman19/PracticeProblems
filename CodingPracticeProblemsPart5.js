@@ -106,7 +106,7 @@ function calc(cards){
 [1,4] => 5 is counted out
 [4] => 1 counted out, 4 is the last element - the survivor!
 */
-document.getElementById("javaScript").innerHTML = josephusSurvivor(7,3);
+//document.getElementById("javaScript").innerHTML = josephusSurvivor(7,3);
 function josephusSurvivor(n, k) {
   let array = [];
   let count = 0;
@@ -143,3 +143,14 @@ else
    k%n + 1 as position 1 */
 return (josephusSurvivor(n - 1, k) + k-1) % n + 1; 
 }
+
+/* 
+array = [[1,2,3],
+         [8,9,4],
+         [7,6,5]]
+snail(array) #=> [1,2,3,4,5,6,7,8,9] 
+*/
+
+snail = function(array) {
+    // enjoy
+  }
