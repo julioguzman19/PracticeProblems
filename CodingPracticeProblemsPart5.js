@@ -150,7 +150,31 @@ array = [[1,2,3],
          [7,6,5]]
 snail(array) #=> [1,2,3,4,5,6,7,8,9] 
 */
-
 snail = function(array) {
-    // enjoy
+    let result = [];
+    result = array[0];
+    console.log(array);
+
+    answer = true;
+    let turns = 0;
+    
+    while(answer){
+
+        for(let i =1;i<=array.length;i++){
+
+            for(let j=1;array[i,j]!==undefined;j++){
+
+                if(i!== array.length-1){
+                    result.push(array[i,array[i].length]);
+                    console.log(result);
+                }
+            }
+        }
+
+        turns++;
+        if(turns === 2){
+            answer = false;
+        }
+    }
   }
+document.getElementById("javaScript").innerHTML = snail([[1,2,3],[8,9,4],[7,6,5]]);
