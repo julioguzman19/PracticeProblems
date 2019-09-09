@@ -4,22 +4,23 @@
 
 //document.getElementById("javaScript").innerHTML = encodingString("aabbbc");
 
-function encodingString(str){
-    let result = "";
-    let count = 0;
+function encodingString(str) {
+  let result = "";
+  let count = 0;
 
-    for(let i=0;i<str.length;i++){
-        if(str.charAt(i) === str.charAt(i+1)){
-            count++;
-        }
-        else if(str.charAt(i) !== str.charAt(i+1) && str.charAt(i+1)!== undefined){
-            count++;
-            result = result + str.charAt(i) + count;
-            count = 0;
-        }
-
+  for (let i = 0; i < str.length; i++) {
+    if (str.charAt(i) === str.charAt(i + 1)) {
+      count++;
+    } else if (
+      str.charAt(i) !== str.charAt(i + 1) &&
+      str.charAt(i + 1) !== undefined
+    ) {
+      count++;
+      result = result + str.charAt(i) + count;
+      count = 0;
     }
-    return result;
+  }
+  return result;
 }
 
 //negation Value
@@ -33,68 +34,57 @@ negationValue("!!", []); //=> true
 
 //document.getElementById("javaScript").innerHTML = negationValue("!!",[]);
 
-function negationValue(string,value){
-
-    let result = true;
-    if(string.length%2 === 0){
-        if(value === true && typeof(value) === "boolean"){
-            result = true;
-        }
-        else if(value === false && typeof(value) === "boolean"){
-            result = false;
-        }
-        else{
-            result = true;
-        }
+function negationValue(string, value) {
+  let result = true;
+  if (string.length % 2 === 0) {
+    if (value === true && typeof value === "boolean") {
+      result = true;
+    } else if (value === false && typeof value === "boolean") {
+      result = false;
+    } else {
+      result = true;
     }
-    else{
-        if(value === true && typeof(value) === "boolean"){
-            result = false;
-        }
-        else if (value === false && typeof(value) === "boolean"){
-            result = true;
-        }
-        else{
-            result = false;
-        }
+  } else {
+    if (value === true && typeof value === "boolean") {
+      result = false;
+    } else if (value === false && typeof value === "boolean") {
+      result = true;
+    } else {
+      result = false;
     }
-    return result;
+  }
+  return result;
 }
-
 
 //recursiveFloorSequence
 //Test.assertEquals(f(2, 3), 6)
 //Test.assertEquals(f(100, 0), 1)
 //fk(n) = ∑ i = 0 n fk(floor(i / k)) where fk(0) = 1
 
-let f = function(k, n){
-    let count = n;
-    let result = 0;
-    for(let i = 0;i<count;i++){
-        result = result + Math.floor(n/k);
-    }
-    return result;
+let f = function(k, n) {
+  let count = n;
+  let result = 0;
+  for (let i = 0; i < count; i++) {
+    result = result + Math.floor(n / k);
   }
+  return result;
+};
 //  document.getElementById("javaScript").innerHTML = f(2,3);
 
 //document.getElementById("javaScript").innerHTML = calc([4, 10, 2, 3, 1, 3, 1, 6, 9]);
-function calc(cards){
-    let result = 0;
-    for(let i=0;i<cards.length;i++){
-        
-        if(cards[0] > cards[cards.length-1]){
-            
-            result = result+ (Math.pow(2,i+1))*(cards[0]);
-            
-            cards.shift();
-        }
-        else{
-            
-            result = result +(Math.pow(2,i+1))*(cards[cards.length-1]);
-            cards.pop();
-        }
+function calc(cards) {
+  let result = 0;
+  for (let i = 0; i < cards.length; i++) {
+    if (cards[0] > cards[cards.length - 1]) {
+      result = result + Math.pow(2, i + 1) * cards[0];
+
+      cards.shift();
+    } else {
+      result = result + Math.pow(2, i + 1) * cards[cards.length - 1];
+      cards.pop();
     }
-    return result;
+  }
+  return result;
 }
 //Test.assertEquals(josephusSurvivor(7,3),4)
 //[1,2,3,4,5,6,7]
@@ -117,31 +107,28 @@ function josephusSurvivor(n, k) {
   }
 
   while (answer) {
-    for(let i=0;i<array.length;i++){
-        count++
-        if(count===k){
-            array.splice(i,1);
-            count=0;
-            i--;
-        }
-        
+    for (let i = 0; i < array.length; i++) {
+      count++;
+      if (count === k) {
+        array.splice(i, 1);
+        count = 0;
+        i--;
+      }
     }
-    if(array.length ===1){
-        answer = false;
+    if (array.length === 1) {
+      answer = false;
     }
-  } 
+  }
   return array[0];
 }
 
 //more efficinet:
 function josephusSurvivor(n, k) {
-if (n == 1) 
-return 1; 
-else
-/* The position returned by josephus(n - 1, k) is adjusted because the 
+  if (n == 1) return 1;
+  /* The position returned by josephus(n - 1, k) is adjusted because the 
    recursive call josephus(n - 1, k) considers the original position  
-   k%n + 1 as position 1 */
-return (josephusSurvivor(n - 1, k) + k-1) % n + 1; 
+   k%n + 1 as position 1 */ else
+    return ((josephusSurvivor(n - 1, k) + k - 1) % n) + 1;
 }
 
 /* 
@@ -151,30 +138,33 @@ array = [[1,2,3],
 snail(array) #=> [1,2,3,4,5,6,7,8,9] 
 */
 snail = function(array) {
-    let result = [];
-    result = array[0];
-    console.log(array);
+  let result = [];
+  result = array[0];
+  let answer = true;
+  let turns = 0;
 
-    answer = true;
-    let turns = 0;
-    
-    while(answer){
-
-        for(let i =1;i<=array.length;i++){
-
-            for(let j=1;array[i,j]!==undefined;j++){
-
-                if(i!== array.length-1){
-                    result.push(array[i,array[i].length]);
-                    console.log(result);
-                }
-            }
+  while (answer) {
+    for (let i = 1; i < array.length; i++) {
+      if (i < array.length - 1) {
+        result.push(array[i][array[i].length - 1]);
+      }
+      if (i === array.length - 1) {
+          console.log(i)
+        for (let j = array[i].length-1; j >= 0; j--) {
+            result.push(array[i][j]);
         }
+      }
+    }
+    console.log(result);
 
-        turns++;
-        if(turns === 2){
-            answer = false;
-        }
+    turns++;
+    if (turns === 2) {
+      answer = false;
     }
   }
-document.getElementById("javaScript").innerHTML = snail([[1,2,3],[8,9,4],[7,6,5]]);
+};
+document.getElementById("javaScript").innerHTML = snail([
+  [1, 2, 3],
+  [8, 9, 4],
+  [7, 6, 5]
+]);
