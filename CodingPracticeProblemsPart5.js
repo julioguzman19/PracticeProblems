@@ -183,24 +183,25 @@ document.getElementById("javaScript").innerHTML = persistence(999);
 function persistence(num){
   let str = num+"";
   let result = 1;
+  let counter =0;
 
   if(str.length>1){
     for(let i=0;i<str.length;i++){
       result = result *parseInt(str.charAt(i));
+     
     }
+    counter = counter+1;
     while(result>=10){
       str = result +"";
       result  = 1;
       for(let i=0;i<str.length;i++){
         result = result *parseInt(str.charAt(i));
       }
+      counter = counter+1;
     }
-    return result;
+    return counter;
   }
   else{
-    return num;
+    return counter;
   }
-
-
-  return str;
 }
