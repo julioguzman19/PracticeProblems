@@ -173,8 +173,34 @@ snail = function(array) {
   [7, 6, 5]
 ]); */
 
-document.getElementById("javaScript").innerHTML = persistence(39);
+
+//persistence(999) === 4 // because 9*9*9 = 729, 7*2*9 = 126,
+                        // 1*2*6 = 12, and finally 1*2 = 2
+
+ //persistence(4) === 0 // because 4 is already a one-digit number
+document.getElementById("javaScript").innerHTML = persistence(999);
 
 function persistence(num){
-  
+  let str = num+"";
+  let result = 1;
+
+  if(str.length>1){
+    for(let i=0;i<str.length;i++){
+      result = result *parseInt(str.charAt(i));
+    }
+    while(result>=10){
+      str = result +"";
+      result  = 1;
+      for(let i=0;i<str.length;i++){
+        result = result *parseInt(str.charAt(i));
+      }
+    }
+    return result;
+  }
+  else{
+    return num;
+  }
+
+
+  return str;
 }
