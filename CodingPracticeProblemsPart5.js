@@ -142,29 +142,39 @@ snail = function(array) {
   result = array[0];
   let answer = true;
   let turns = 0;
+  let iIteration =1;
 
   while (answer) {
-    for (let i = 1; i < array.length; i++) {
+    for (let i = iIteration; i < array.length; i++) {
       if (i < array.length - 1) {
         result.push(array[i][array[i].length - 1]);
       }
-      if (i === array.length - 1) {
-          console.log(i)
+      if (i === array.length - iIteration) {
         for (let j = array[i].length-1; j >= 0; j--) {
             result.push(array[i][j]);
         }
+        iIteration = iIteration+1;
       }
     }
+     console.log(iIteration);
+    
+    console.log("for loops ended")
     console.log(result);
 
     turns++;
-    if (turns === 2) {
+    if (turns === 7) {
       answer = false;
     }
   }
 };
-document.getElementById("javaScript").innerHTML = snail([
+/* document.getElementById("javaScript").innerHTML = snail([
   [1, 2, 3],
   [8, 9, 4],
   [7, 6, 5]
-]);
+]); */
+
+document.getElementById("javaScript").innerHTML = persistence(39);
+
+function persistence(num){
+  
+}
