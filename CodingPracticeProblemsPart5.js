@@ -205,9 +205,27 @@ function persistence(num){
     return counter;
   }
 }
+//  ([2, 3, 4, 5, 6]), true );
+// ([6, 2, 3, 4, 5]), true );
+// ([3, 2, 4, 5, 6]), false );
 
-document.getElementById("javaScript").innerHTML = isCircleSorted([2,3,4,5,0,1])
+document.getElementById("javaScript").innerHTML = isCircleSorted([4,3,4,5,0,1]);
 
-function  isCircleSorted(){
+function  isCircleSorted(arr){
+  let result = true;
+  let tempNum = "";
+  
+    for(let i =0;i<arr.length-1;i++){
+      if(typeof(tempNum)=== "number"){
+        if(tempNum<arr[i]){
+          return false;
+        }
+      }
+      if(arr[i]>arr[i+1]){
+        tempNum = arr[i]; 
+      }
+
+    }
+    return result;
   
 }
