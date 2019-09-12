@@ -178,7 +178,7 @@ snail = function(array) {
                         // 1*2*6 = 12, and finally 1*2 = 2
 
  //persistence(4) === 0 // because 4 is already a one-digit number
-document.getElementById("javaScript").innerHTML = persistence(999);
+//document.getElementById("javaScript").innerHTML = persistence(999);
 
 function persistence(num){
   let str = num+"";
@@ -204,4 +204,10 @@ function persistence(num){
   else{
     return counter;
   }
+}
+
+document.getElementById("javaScript").innerHTML = isCircleSorted([2,3,4,5,0,1])
+
+function  isCircleSorted(){
+  
 }
