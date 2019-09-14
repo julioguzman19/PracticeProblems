@@ -228,9 +228,38 @@ function  isCircleSorted(arr){
     }
     return result;
 }
-
+/*
++---+---+---+
+| N | i | c |
++---+---+---+
+| e |   | p |
++---+---+---+
+| a | t | t |
++---+---+---+
+| e | r | n |
++---+---+---+
+*/
 document.getElementById("javaScript").innerHTML =patter(4,3,"Nice Pattern");
 
 function patter(rows,columns,str){
+  result = "";
+
+  for(let i=0;i<str.length;i++){
+
+    if(i===0){
+      for(let j=0;j<columns;j++){
+        result = result+"+";
+        result = result +"---";
+        if(j===columns-1){
+          result = result+"+\n" ;
+        }
+      }
+    }
+    console.log(result);
+    result = result+ "|"+result+str.charAt(i);
+
   
+  //console.log ("df"+"\n"+"a");
+}
+
 }
