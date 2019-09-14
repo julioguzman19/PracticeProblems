@@ -209,7 +209,7 @@ function persistence(num){
 // ([6, 2, 3, 4, 5]), true );
 // ([3, 2, 4, 5, 6]), false );
 
-document.getElementById("javaScript").innerHTML = isCircleSorted([4,3,4,5,0,1]);
+//document.getElementById("javaScript").innerHTML = isCircleSorted([2,3,4,3]);
 
 function  isCircleSorted(arr){
   let result = true;
@@ -227,5 +227,10 @@ function  isCircleSorted(arr){
 
     }
     return result;
+}
+
+document.getElementById("javaScript").innerHTML =patter(4,3,"Nice Pattern");
+
+function patter(rows,columns,str){
   
 }
