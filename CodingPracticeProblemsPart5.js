@@ -228,6 +228,7 @@ function  isCircleSorted(arr){
     }
     return result;
 }
+//patter(4,3,"Nice Pattern")
 /*
 +---+---+---+
 | N | i | c |
@@ -242,24 +243,31 @@ function  isCircleSorted(arr){
 document.getElementById("javaScript").innerHTML =patter(4,3,"Nice Pattern");
 
 function patter(rows,columns,str){
+  plusPattern = "";
   result = "";
+  for(let j=0;j<columns;j++){
+    plusPattern += '+--';
+  }
+  plusPattern += '+';
 
-  for(let i=0;i<str.length;i++){
+ 
+
+  }
+
+  /* for(let i=0;i<str.length;i++){
 
     if(i===0){
       for(let j=0;j<columns;j++){
         result = result+"+";
         result = result +"---";
         if(j===columns-1){
-          result = result+"+\n" ;
+          result = result+"+"+"\n";
+          
         }
       }
     }
-    console.log(result);
-    result = result+ "|"+result+str.charAt(i);
-
+    
+    result =  "|"+result+ str.charAt(i);
+console.log(result); */
   
   //console.log ("df"+"\n"+"a");
-}
-
-}
