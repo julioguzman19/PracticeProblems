@@ -240,34 +240,34 @@ function  isCircleSorted(arr){
 | e | r | n |
 +---+---+---+
 */
-document.getElementById("javaScript").innerHTML =patter(4,3,"Nice Pattern");
+document.getElementById("javaScript").innerHTML =pattern(4,3,"Nice Pattern");
 
-function patter(rows,columns,str){
+function pattern(rows,columns,str){
   plusPattern = "";
   result = "";
-  for(let j=0;j<columns;j++){
-    plusPattern += '+--';
+  for(let i=0;i<columns;i++){
+    plusPattern += '+---';
   }
   plusPattern += '+';
+  result = plusPattern+"\n";
 
- 
-
+  let rowCount = 1;
+  for(let i=0;i<str.length;i++){
+    rowCount++;
+    if(rowCount === rows){
+      result = result+"| "+str.charAt(i)+" |\n"+plusPattern+"\n";
+      rowCount=1;
+    }
+    else{
+      result = result+"| "+str.charAt(i) +" ";
+    }
+  }
+  console.log(result);
   }
 
-  /* for(let i=0;i<str.length;i++){
 
-    if(i===0){
-      for(let j=0;j<columns;j++){
-        result = result+"+";
-        result = result +"---";
-        if(j===columns-1){
-          result = result+"+"+"\n";
-          
-        }
-      }
-    }
     
-    result =  "|"+result+ str.charAt(i);
+   /* result =  "|"+result+ str.charAt(i);
 console.log(result); */
   
   //console.log ("df"+"\n"+"a");
