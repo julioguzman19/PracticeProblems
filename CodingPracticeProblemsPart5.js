@@ -240,7 +240,7 @@ function  isCircleSorted(arr){
 | e | r | n |
 +---+---+---+
 */
-document.getElementById("javaScript").innerHTML =pattern(4,3,"Nice Pattern");
+//document.getElementById("javaScript").innerHTML =pattern(4,3,"Nice Pattern");
 
 function pattern(rows,columns,str){
   plusPattern = "";
@@ -251,18 +251,18 @@ function pattern(rows,columns,str){
   plusPattern += '+';
   result = plusPattern+"\n";
 
-  let rowCount = 1;
+  let columnCount = 1;
   for(let i=0;i<str.length;i++){
-    rowCount++;
-    if(rowCount === rows){
+    columnCount++;
+    if(columnCount === columns+1){
       result = result+"| "+str.charAt(i)+" |\n"+plusPattern+"\n";
-      rowCount=1;
+      columnCount=1;
     }
     else{
       result = result+"| "+str.charAt(i) +" ";
     }
   }
-  console.log(result);
+  //console.log(result);
   }
 
 
@@ -271,3 +271,8 @@ function pattern(rows,columns,str){
 console.log(result); */
   
   //console.log ("df"+"\n"+"a");
+
+  document.getElementById("javaScript").innerHTML =
+function choose(n,k){
+
+}
