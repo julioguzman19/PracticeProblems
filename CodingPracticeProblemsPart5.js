@@ -270,15 +270,31 @@ function pattern(rows,columns,str){
     
 //n choose k==n!/(k!*(n-k)!)
 
-document.getElementById("javaScript").innerHTML = choose(5,4)
+document.getElementById("javaScript").innerHTML = choose(10,20)
 function choose(n,k){
   let nFactorial = 1;
   let kFactorial = 1;
-
+  let nMinuskFactorial = 1;
   let i = n;
   while(i!==0){
     nFactorial = nFactorial * i;
     i--;
   }
-  return nFactorial;
+  i = k;
+  while(i!==0){
+    kFactorial = kFactorial * i;
+    i--;
+  }
+
+  if(k>n){
+    return 0;
+  }
+  else{
+    i = n-k;
+    while(i!==0){
+      nMinuskFactorial = nMinuskFactorial * i;
+      i--;
+    }
+    return Math.round((nFactorial / (kFactorial*nMinuskFactorial)));
+  }
 }
