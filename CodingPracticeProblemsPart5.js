@@ -241,6 +241,7 @@ function  isCircleSorted(arr){
 +---+---+---+
 */
 //document.getElementById("javaScript").innerHTML =pattern(4,3,"Nice Pattern");
+//n choose k==n!/(k!*(n-k)!)
 
 function pattern(rows,columns,str){
   plusPattern = "";
@@ -267,12 +268,17 @@ function pattern(rows,columns,str){
 
 
     
-   /* result =  "|"+result+ str.charAt(i);
-console.log(result); */
-  
-  //console.log ("df"+"\n"+"a");
+//n choose k==n!/(k!*(n-k)!)
 
-  document.getElementById("javaScript").innerHTML =
+document.getElementById("javaScript").innerHTML = choose(5,4)
 function choose(n,k){
+  let nFactorial = 1;
+  let kFactorial = 1;
 
+  let i = n;
+  while(i!==0){
+    nFactorial = nFactorial * i;
+    i--;
+  }
+  return nFactorial;
 }
