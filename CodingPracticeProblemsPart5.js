@@ -300,8 +300,20 @@ function choose(n,k){
 }
 
 let rowSumOddNumbers = n => {
-  return n;
+  if(n===1){
+    return 1;
+  }
+  let initialNum = n* (n-1) + 1;
+  let result = initialNum;
+  let count=1;
+  let nextOdd = initialNum;
+  while(count!==n){
+    nextOdd= nextOdd+2;
+    result = result + nextOdd;
+    count++; 
+  }
+  return result;
 }
-document.getElementById("javaScript").innerHTML = rowSumOddNumbers(3);
+document.getElementById("javaScript").innerHTML = rowSumOddNumbers(42);
 
 
