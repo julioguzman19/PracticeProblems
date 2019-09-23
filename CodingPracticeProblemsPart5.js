@@ -270,7 +270,7 @@ function pattern(rows,columns,str){
     
 //n choose k==n!/(k!*(n-k)!)
 
-document.getElementById("javaScript").innerHTML = choose(10,20)
+//document.getElementById("javaScript").innerHTML = choose(10,20)
 function choose(n,k){
   let nFactorial = 1;
   let kFactorial = 1;
@@ -298,3 +298,10 @@ function choose(n,k){
     return Math.round((nFactorial / (kFactorial*nMinuskFactorial)));
   }
 }
+
+let rowSumOddNumbers = n => {
+  return n;
+}
+document.getElementById("javaScript").innerHTML = rowSumOddNumbers(3);
+
+
