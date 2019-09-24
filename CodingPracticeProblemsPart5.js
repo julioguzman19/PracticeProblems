@@ -314,6 +314,11 @@ let rowSumOddNumbers = n => {
   }
   return result;
 }
-document.getElementById("javaScript").innerHTML = rowSumOddNumbers(42);
+//document.getElementById("javaScript").innerHTML = rowSumOddNumbers(42);
 
-
+let findCapitalLetter = str =>{
+  
+  for(let i=0;i<str.length;i++){
+    
+  }
+}
