@@ -317,8 +317,12 @@ let rowSumOddNumbers = n => {
 //document.getElementById("javaScript").innerHTML = rowSumOddNumbers(42);
 
 let findCapitalLetter = str =>{
-  
+  let result='';
   for(let i=0;i<str.length;i++){
-    
+    if(str.charAt(i) === str.charAt(i).toUpperCase()){
+      result = result+str.charAt(i);
+    }
   }
+  return result;
 }
+document.getElementById("javaScript").innerHTML = findCapitalLetter("abcDefgHi");
