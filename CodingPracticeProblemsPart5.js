@@ -328,5 +328,23 @@ let findCapitalLetter = str =>{
 //document.getElementById("javaScript").innerHTML = findCapitalLetter("abcDefgHi");
 
 function availableSpots(arr,num){
-  
+  let numType="";
+  if(num%2===0){
+    numType = "even";
+  }
+  else{
+    numType="odd";
+  }
+  let oddCount = 0;
+  let evenCount =0;
+  for(let i=0;i<arr.length;i++){
+    if(arr[i]%2===0){
+      evenCount++;
+    }
+    else{
+      oddCount++;
+    }
+  }
+  return(evenCount);
 }
+document.getElementById("javaScript").innerHTML = availableSpots([1,2,3],4);
