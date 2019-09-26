@@ -325,4 +325,8 @@ let findCapitalLetter = str =>{
   }
   return result;
 }
-document.getElementById("javaScript").innerHTML = findCapitalLetter("abcDefgHi");
+//document.getElementById("javaScript").innerHTML = findCapitalLetter("abcDefgHi");
+
+function availableSpots(arr,num){
+  
+}
