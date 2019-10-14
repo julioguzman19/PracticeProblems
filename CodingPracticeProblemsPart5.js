@@ -61,7 +61,7 @@ function negationValue(string, value) {
 //Test.assertEquals(f(100, 0), 1)
 //fk(n) = ∑ i = 0 n fk(floor(i / k)) where fk(0) = 1
 
-let f = function(k, n) {
+let f = function (k, n) {
   let count = n;
   let result = 0;
   for (let i = 0; i < count; i++) {
@@ -137,12 +137,12 @@ array = [[1,2,3],
          [7,6,5]]
 snail(array) #=> [1,2,3,4,5,6,7,8,9] 
 */
-snail = function(array) {
+snail = function (array) {
   let result = [];
   result = array[0];
   let answer = true;
   let turns = 0;
-  let iIteration =1;
+  let iIteration = 1;
 
   while (answer) {
     for (let i = iIteration; i < array.length; i++) {
@@ -150,14 +150,14 @@ snail = function(array) {
         result.push(array[i][array[i].length - 1]);
       }
       if (i === array.length - iIteration) {
-        for (let j = array[i].length-1; j >= 0; j--) {
-            result.push(array[i][j]);
+        for (let j = array[i].length - 1; j >= 0; j--) {
+          result.push(array[i][j]);
         }
-        iIteration = iIteration+1;
+        iIteration = iIteration + 1;
       }
     }
-     console.log(iIteration);
-    
+    console.log(iIteration);
+
     console.log("for loops ended")
     console.log(result);
 
@@ -175,33 +175,33 @@ snail = function(array) {
 
 
 //persistence(999) === 4 // because 9*9*9 = 729, 7*2*9 = 126,
-                        // 1*2*6 = 12, and finally 1*2 = 2
+// 1*2*6 = 12, and finally 1*2 = 2
 
- //persistence(4) === 0 // because 4 is already a one-digit number
+//persistence(4) === 0 // because 4 is already a one-digit number
 //document.getElementById("javaScript").innerHTML = persistence(999);
 
-function persistence(num){
-  let str = num+"";
+function persistence(num) {
+  let str = num + "";
   let result = 1;
-  let counter =0;
+  let counter = 0;
 
-  if(str.length>1){
-    for(let i=0;i<str.length;i++){
-      result = result *parseInt(str.charAt(i));
-     
+  if (str.length > 1) {
+    for (let i = 0; i < str.length; i++) {
+      result = result * parseInt(str.charAt(i));
+
     }
-    counter = counter+1;
-    while(result>=10){
-      str = result +"";
-      result  = 1;
-      for(let i=0;i<str.length;i++){
-        result = result *parseInt(str.charAt(i));
+    counter = counter + 1;
+    while (result >= 10) {
+      str = result + "";
+      result = 1;
+      for (let i = 0; i < str.length; i++) {
+        result = result * parseInt(str.charAt(i));
       }
-      counter = counter+1;
+      counter = counter + 1;
     }
     return counter;
   }
-  else{
+  else {
     return counter;
   }
 }
@@ -211,22 +211,22 @@ function persistence(num){
 
 //document.getElementById("javaScript").innerHTML = isCircleSorted([2,3,4,3]);
 
-function  isCircleSorted(arr){
+function isCircleSorted(arr) {
   let result = true;
   let tempNum = "";
-  
-    for(let i =0;i<arr.length-1;i++){
-      if(typeof(tempNum)=== "number"){
-        if(tempNum<arr[i]){
-          return false;
-        }
-      }
-      if(arr[i]>arr[i+1]){
-        tempNum = arr[i]; 
-      }
 
+  for (let i = 0; i < arr.length - 1; i++) {
+    if (typeof (tempNum) === "number") {
+      if (tempNum < arr[i]) {
+        return false;
+      }
     }
-    return result;
+    if (arr[i] > arr[i + 1]) {
+      tempNum = arr[i];
+    }
+
+  }
+  return result;
 }
 //patter(4,3,"Nice Pattern")
 /*
@@ -243,108 +243,120 @@ function  isCircleSorted(arr){
 //document.getElementById("javaScript").innerHTML =pattern(4,3,"Nice Pattern");
 //n choose k==n!/(k!*(n-k)!)
 
-function pattern(rows,columns,str){
+function pattern(rows, columns, str) {
   plusPattern = "";
   result = "";
-  for(let i=0;i<columns;i++){
+  for (let i = 0; i < columns; i++) {
     plusPattern += '+---';
   }
   plusPattern += '+';
-  result = plusPattern+"\n";
+  result = plusPattern + "\n";
 
   let columnCount = 1;
-  for(let i=0;i<str.length;i++){
+  for (let i = 0; i < str.length; i++) {
     columnCount++;
-    if(columnCount === columns+1){
-      result = result+"| "+str.charAt(i)+" |\n"+plusPattern+"\n";
-      columnCount=1;
+    if (columnCount === columns + 1) {
+      result = result + "| " + str.charAt(i) + " |\n" + plusPattern + "\n";
+      columnCount = 1;
     }
-    else{
-      result = result+"| "+str.charAt(i) +" ";
+    else {
+      result = result + "| " + str.charAt(i) + " ";
     }
   }
   //console.log(result);
-  }
+}
 
 
-    
+
 //n choose k==n!/(k!*(n-k)!)
 
 //document.getElementById("javaScript").innerHTML = choose(10,20)
-function choose(n,k){
+function choose(n, k) {
   let nFactorial = 1;
   let kFactorial = 1;
   let nMinuskFactorial = 1;
   let i = n;
-  while(i!==0){
+  while (i !== 0) {
     nFactorial = nFactorial * i;
     i--;
   }
   i = k;
-  while(i!==0){
+  while (i !== 0) {
     kFactorial = kFactorial * i;
     i--;
   }
 
-  if(k>n){
+  if (k > n) {
     return 0;
   }
-  else{
-    i = n-k;
-    while(i!==0){
+  else {
+    i = n - k;
+    while (i !== 0) {
       nMinuskFactorial = nMinuskFactorial * i;
       i--;
     }
-    return Math.round((nFactorial / (kFactorial*nMinuskFactorial)));
+    return Math.round((nFactorial / (kFactorial * nMinuskFactorial)));
   }
 }
 
 let rowSumOddNumbers = n => {
-  if(n===1){
+  if (n === 1) {
     return 1;
   }
-  let initialNum = n* (n-1) + 1;
+  let initialNum = n * (n - 1) + 1;
   let result = initialNum;
-  let count=1;
+  let count = 1;
   let nextOdd = initialNum;
-  while(count!==n){
-    nextOdd= nextOdd+2;
+  while (count !== n) {
+    nextOdd = nextOdd + 2;
     result = result + nextOdd;
-    count++; 
+    count++;
   }
   return result;
 }
 //document.getElementById("javaScript").innerHTML = rowSumOddNumbers(42);
 
-let findCapitalLetter = str =>{
-  let result='';
-  for(let i=0;i<str.length;i++){
-    if(str.charAt(i) === str.charAt(i).toUpperCase()){
-      result = result+str.charAt(i);
+let findCapitalLetter = str => {
+  let result = '';
+  for (let i = 0; i < str.length; i++) {
+    if (str.charAt(i) === str.charAt(i).toUpperCase()) {
+      result = result + str.charAt(i);
     }
   }
   return result;
 }
 //document.getElementById("javaScript").innerHTML = findCapitalLetter("abcDefgHi");
 
-function availableSpots(arr,num){
-  let numType="";
-  if(num%2===0){
+function availableSpots(arr, num) {
+  let numType = "";
+  if (num % 2 === 0) {
     numType = "even";
   }
-  else{
-    numType="odd";
+  else {
+    numType = "odd";
   }
   let oddCount = 0;
-  let evenCount =0;
-  for(let i=0;i<arr.length;i++){
-    if(arr[i]%2===0){
+  let evenCount = 0;
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] % 2 === 0) {
       evenCount++;
     }
-    else{
+    else {
       oddCount++;
     }
   }
-  return(evenCount);
+  return (evenCount);
 }
-document.getElementById("javaScript").innerHTML = availableSpots([1,2,3],4);
+//document.getElementById("javaScript").innerHTML = availableSpots([1,2,3],4);
+
+function inClass(n) {
+  if (n === 0) {
+    return 0;
+  }
+  if (n === 1 || n == 2) {
+    return 1;
+  }
+
+
+}
+//document.getElementById("javaScript").innerHTML = inClass();
