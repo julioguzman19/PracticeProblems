@@ -11,7 +11,7 @@ step-5: We repeat this process, starting from the last item of the array. look a
 
 step-6: and then we move backward inside the outer loop 
 */
-document.getElementById("javaScript").innerHTML = bubbleSort([1, 5, 2, 9, 3]);
+document.getElementById("javaScript").innerHTML = bubbleSort([69, 5, 2, 9, 3]);
 function bubbleSort(arr) {
     let len = arr.length;
     for (i = len - 1; i >= 0; i--) {
