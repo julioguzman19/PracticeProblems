@@ -36,7 +36,9 @@ function bubbleSort(arr) {
   }
   return arr;
 }
-
+/* Quick Sort is a divide and conquer algorithm. 
+It creates two empty arrays to hold elements less than the pivot value and elements greater than the pivot value, and then recursively sort the sub arrays. 
+There are two basic operations in the algorithm, swapping items in place and partitioning a section of the array */
 document.getElementById("javaScript").innerHTML = quickSort([
   3,
   0,
@@ -46,4 +48,22 @@ document.getElementById("javaScript").innerHTML = quickSort([
   4,
   1
 ]);
-function quickSort(arr) {}
+function quickSort(arr) {
+  if (arr.length <= 1) {
+    return arr;
+  }
+  let left = [];
+  let right = [];
+  let newArray = [];
+  let pivot = arr.pop(); //gets last number of array in this case one
+  let length = arr.length;
+
+  for (let i = 0; i < length; i++) {
+    if (arr[i] <= pivot) {
+      left.push(arr[i]);
+    } else {
+      right.push(arr[i]);
+    }
+    console.log("pivot: " + pivot + " right: " + right + " " + "left: " + left);
+  }
+}
