@@ -11,21 +11,39 @@ step-5: We repeat this process, starting from the last item of the array. look a
 
 step-6: and then we move backward inside the outer loop 
 */
-document.getElementById("javaScript").innerHTML = bubbleSort([69, 5, 2, 9, 3]);
+//document.getElementById("javaScript").innerHTML = bubbleSort([69, 5, 2, 9, 3]);
 function bubbleSort(arr) {
-    let len = arr.length;
-    for (i = len - 1; i >= 0; i--) {
-        for (let j = 1; j <= i; j++) {
-            console.log("arr: " + arr + "\n");
-            console.log("---------if arr[j-1]: " + arr[j - 1] + " " + "> arr[j]:  " + arr[j] + " ------------------------")
-            if (arr[j - 1] > arr[j]) {
-                console.log("\n\n\n\narr: " + arr);
-                let temp = arr[j - 1];
-                console.log("temp to store higher number: " + arr[j - 1]);
-                arr[j - 1] = arr[j];
-                arr[j] = temp;
-            }
-        }
+  let len = arr.length;
+  for (i = len - 1; i >= 0; i--) {
+    for (let j = 1; j <= i; j++) {
+      console.log("arr: " + arr + "\n");
+      console.log(
+        "---------if arr[j-1]: " +
+          arr[j - 1] +
+          " " +
+          "> arr[j]:  " +
+          arr[j] +
+          " ------------------------"
+      );
+      if (arr[j - 1] > arr[j]) {
+        console.log("\n\n\n\narr: " + arr);
+        let temp = arr[j - 1];
+        console.log("temp to store higher number: " + arr[j - 1]);
+        arr[j - 1] = arr[j];
+        arr[j] = temp;
+      }
     }
-    return arr;
+  }
+  return arr;
 }
+
+document.getElementById("javaScript").innerHTML = quickSort([
+  3,
+  0,
+  2,
+  5,
+  -1,
+  4,
+  1
+]);
+function quickSort(arr) {}
