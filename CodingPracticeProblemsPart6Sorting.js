@@ -66,4 +66,5 @@ function quickSort(arr) {
     }
     console.log("pivot: " + pivot + " right: " + right + " " + "left: " + left);
   }
+  return newArray.concat(quickSort(left), pivot, quickSort(right));
 }
