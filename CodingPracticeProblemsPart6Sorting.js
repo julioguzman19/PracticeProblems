@@ -69,8 +69,18 @@ function quickSort(arr) {
   return newArray.concat(quickSort(left), pivot, quickSort(right));
 }
 
-document.getElementById("javaScript").innerHTML = isPrime();
+document.getElementById("javaScript").innerHTML = isPrime(11117);
 
 function isPrime(number) {
+  let divisor = 2;
 
+  while (number > divisor) {
+    if (number % divisor === 0) {
+      return number + " " + "is not prime";
+    }
+    else {
+      divisor++;
+    }
+  }
+  return number + " " + "is prime!!!";
 }
