@@ -69,7 +69,7 @@ function quickSort(arr) {
   return newArray.concat(quickSort(left), pivot, quickSort(right));
 }
 
-document.getElementById("javaScript").innerHTML = isPrime(11117);
+//document.getElementById("javaScript").innerHTML = isPrime(11117);
 
 function isPrime(number) {
   let divisor = 2;
@@ -83,4 +83,18 @@ function isPrime(number) {
     }
   }
   return number + " " + "is prime!!!";
+}
+
+/* There's a staircase with N steps, and you can climb 1 or 2 steps at a time. Given N, write a function that returns the number of unique ways you can climb the staircase. The order of the steps matters.
+
+For example, if N is 4, then there are 5 unique ways:
+
+1, 1, 1, 1
+2, 1, 1
+1, 2, 1
+1, 1, 2
+2, 2 */
+ocument.getElementById("javaScript").innerHTML = 4;
+function staircase(n) {
+
 }
