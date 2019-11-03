@@ -86,15 +86,26 @@ function isPrime(number) {
 }
 
 /* There's a staircase with N steps, and you can climb 1 or 2 steps at a time. Given N, write a function that returns the number of unique ways you can climb the staircase. The order of the steps matters.
-
-For example, if N is 4, then there are 5 unique ways:
-
+///////////n=4   self notes: f(4) = f(3)+ f(2)    f(n) = f(n-1) + f(n-2)
 1, 1, 1, 1
 2, 1, 1
 1, 2, 1
 1, 1, 2
-2, 2 */
-ocument.getElementById("javaScript").innerHTML = 4;
+2, 2 
+///////////n=3
+1,1,1
+1,2
+2,1
+///////////n=2
+1,1
+2
+///////////n=1
+1
+*/
+document.getElementById("javaScript").innerHTML = staircase(4);
 function staircase(n) {
-
+  if (n <= 1) {
+    return 1;
+  }
+  return staircase(n - 1) + staircase(n - 2);
 }
