@@ -103,9 +103,15 @@ function isPrime(number) {
 1
 */
 document.getElementById("javaScript").innerHTML = staircase(4);
-function staircase(n) {
+//TIME COMPLEXITY O(2^n)
+/* function staircase(n) {
   if (n <= 1) {
     return 1;
   }
   return staircase(n - 1) + staircase(n - 2);
+  
+} */
+
+function staircase(n) {
+
 }
